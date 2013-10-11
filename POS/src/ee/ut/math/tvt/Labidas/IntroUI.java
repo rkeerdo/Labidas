@@ -3,7 +3,9 @@ package ee.ut.math.tvt.Labidas;
 import java.awt.FlowLayout;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Properties;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -33,13 +35,28 @@ public class IntroUI {
 	}
 	
 	void addCreditText() {
-		creditBox = new JTextArea("Team LABIDAS:\n"
-				+ "Joosep Heinmets (leader)\n"
-				+ "Rainer Keerdo\n"
-				+ "Kaspar Kesli\n"
-				+ "Allan Kustavus\n\n"
-				+ "Leader's e-mail: joosephe@gmail.com\n\n"
-				+ "Version number: " + 1);
+		Properties application = new Properties();
+		Properties version=new Properties();
+		String info[]=new String[6];
+		try{
+			application.load(new FileInputStream("application.properties"));
+			info[0]="Course: "+application.getProperty("course");
+			info[1]="Team name: "+application.getProperty("team.name");
+			info[2]="Team leader: "+application.getProperty("team.leader.name");
+			info[3]="Team leader's email: "+application.getProperty("team.leader.email");
+			info[4]="Team members: "+application.getProperty("team.members");
+			version.load(new FileInputStream("version.properties"));
+			info[5]="Version number: "+version.getProperty("build.number");
+		}
+		catch(IOException e){
+			e.printStackTrace();
+		}
+		creditBox = new JTextArea(info[0]+"\n"
+				+ info[1]+"\n"
+				+ info[2]+"\n"
+				+ info[3]+"\n"
+				+ info[4]+"\n"
+				+ info[5]);
 		creditBox.setBounds(0,0,250,145);
 		creditBox.setEditable(false);
 		window.add(creditBox);
