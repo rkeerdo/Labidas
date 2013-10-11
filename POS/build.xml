@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="Labidas-POS" default="build">
+
+	<!-- Definitions of variables used during the rest of this script -->
+
+	<property file="build.properties"/>
+	<property name="build.dir" value="${basedir}/build"/>
+	<property name="build.classes.dir" value="${build.dir}/classes"/>
+	<property name="src.dir" value="${basedir}/src"/>
+	<property name="dist.dir" value="${basedir}/dist"/>
+	<property name="conf.dir" value="${basedir}/etc"/>
+	<property name="doc.dir" value="${build.dir}/doc"/>
+	<property name="test.reports.dir" value="${build.dir}/reports/"/>
+
+	<!-- Definitions of classpath variants used for different tasks -->
+
+	<path id="compile.classpath">
+		<fileset dir="lib">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+
+	<path id="test.classpath">
+		<pathelement location="${build.classes.dir}"/>
+		<!-- configuration -->
+		<pathelement location="${conf.dir}"/>
+		<fileset dir="lib">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+
+	<!-- Definitions of runnable ant targets.
+         Run them from the command line by executing "ant [targetname]"  -->
+
+	<target name="run" depends="build" description="Run the application">
+		<java classname="ee.ut.math.tvt.Labidas.Intro" classpathref="test.classpath" fork="yes" />
+	</target>
+
+	<target name="build" description="Build the system">
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${build.classes.dir}"/>
+		<javac
+            srcdir="${src.dir}"
+            destdir="${build.classes.dir}"
+            debug="true"
+            debuglevel="lines,vars,source"
+            encoding="utf-8"
+            compiler="modern"
+            target="1.7"
+            source="1.7"
+			includeantruntime="false">
+			<classpath refid="compile.classpath"/>
+		</javac>
+
+	</target>
+
+	<!-- Clean up build system results -->
+	<target name="clean" description="Clean up build system results">
+		<delete dir="${build.dir}"/>
+	</target>
+	
+	<!-- Creates a distributable JAR with version number control-->
+	<target name="dist" description="Creates a JAR distro">
+		<mkdir dir="${build.dir.jar}"/>
+				<mkdir dir="${build.classes.dir}"/>
+					<jar
+                            destfile="${build.jar.dir}/Labidas.jar"
+                            basedir="${build.classes.dir}">
+                            <manifest>
+                                    <attribute name="Main" value="ee.ut.math.tvt.Labidas.Intro"/>
+                            </manifest>
+                            <zipgroupfileset dir="${basedir}/lib" includes="**/*.jar"/>
+                    </jar>
+                <copy file="res/LABIDAS.jpg" todir="${build.jar.dir}"/>
+                <copy todir="${build.jar.dir}">
+                        <fileset dir="${basedir}" includes="**.properties"/>
+                </copy>
+                <propertyfile file="${basedir}/version.properties">
+                        <entry key="build.revision.number" type="int" operation="+" value="1"/>
+                        <entry key="build.number" operation="=" value="${build.revision.number}"/>
+                </propertyfile>
+                <property file="${basedir}/version.properties" prefix="file"/>
+                <propertyfile file="${basedir}/version.properties">
+                        <entry key="build.number" operation="=" value="${file.build.major.number}.${file.build.minor.number}.${file.build.revision.number}"/>
+                </propertyfile>
+	</target>
+	
+	<!-- Opens intro window using the distributable JAR -->
+	<target name="jrun" depends="dist" description="Runs the JAR distro">
+	
+	</target>
+	
+</project>
