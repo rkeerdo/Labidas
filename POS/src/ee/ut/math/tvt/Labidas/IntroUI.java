@@ -23,7 +23,7 @@ public class IntroUI {
 		window.repaint();
 	}
 	
-	void addWindowSettings() {
+	private void addWindowSettings() {
 		window = new JFrame();
 		window.setTitle("Intro");
 		window.setSize(800,600);
@@ -32,20 +32,20 @@ public class IntroUI {
 		window.setVisible(true);
 	}
 	
-	void addCreditText() {
+	private void addCreditText() {
 		creditBox = new JTextArea("Team LABIDAS:\n"
 				+ "Joosep Heinmets (leader)\n"
 				+ "Rainer Keerdo\n"
 				+ "Kaspar Kesli\n"
 				+ "Allan Kustavus\n\n"
 				+ "Leader's e-mail: joosephe@gmail.com\n\n"
-				+ "Version number: " + 1);
+				+ "Version number: 1.0.0");
 		creditBox.setBounds(0,0,250,145);
 		creditBox.setEditable(false);
 		window.add(creditBox);
 	}
 	
-	void addLogo() {
+	private void addLogo() {
 		BufferedImage tmpLogo = null;
 		try {
 			tmpLogo = ImageIO.read(new File("res/LABIDAS.jpg"));

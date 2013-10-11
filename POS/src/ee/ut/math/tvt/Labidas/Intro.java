@@ -2,11 +2,15 @@ package ee.ut.math.tvt.Labidas;
 
 import javax.swing.JFrame;
 
+import org.apache.log4j.Logger;
+
 public class Intro {
+	private static org.apache.log4j.Logger logger = Logger.getLogger(Intro.class);
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		IntroUI mainWindow = new IntroUI();
+		logger.info("Window has been opened.");
 	}
 
 }
