@@ -34,17 +34,7 @@ public class IntroUI {
 		window.setVisible(true);
 	}
 	
-<<<<<<< HEAD
 	private void addCreditText() {
-		creditBox = new JTextArea("Team LABIDAS:\n"
-				+ "Joosep Heinmets (leader)\n"
-				+ "Rainer Keerdo\n"
-				+ "Kaspar Kesli\n"
-				+ "Allan Kustavus\n\n"
-				+ "Leader's e-mail: joosephe@gmail.com\n\n"
-				+ "Version number: 1.0.0");
-=======
-	void addCreditText() {
 		Properties application = new Properties();
 		Properties version=new Properties();
 		String info[]=new String[6];
@@ -67,7 +57,6 @@ public class IntroUI {
 				+ info[3]+"\n"
 				+ info[4]+"\n"
 				+ info[5]);
->>>>>>> 75c2a5ba755d5d23c057fa89b31665a683c02422
 		creditBox.setBounds(0,0,250,145);
 		creditBox.setEditable(false);
 		window.add(creditBox);
