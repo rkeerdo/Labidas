@@ -34,6 +34,7 @@ public class IntroUI {
 		window.setVisible(true);
 	}
 	
+	
 	private void addCreditText() {
 		Properties application = new Properties();
 		Properties version=new Properties();

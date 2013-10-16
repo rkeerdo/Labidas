@@ -5,6 +5,7 @@ import javax.swing.JFrame;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+
 public class Intro {
 	private static org.apache.log4j.Logger logger = Logger.getLogger(Intro.class);
 

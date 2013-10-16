@@ -32,7 +32,6 @@
                 </javac>
         </target>
  
- 
         <target name="run" depends="build" description="Run the application">
                 <java classname="ee.ut.math.tvt.Labidas.Intro" classpathref="test.classpath" fork="yes" />
         </target>
