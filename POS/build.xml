@@ -60,7 +60,11 @@
                 </propertyfile>
                        
         </target>
- 
+		<target name="runc" depends="build" description="Run the application (console)">
+			<java classname="ee.ut.math.tvt.Labidas.Intro" classpathref="test.classpath" fork="yes">
+				<arg value="console" />
+			</java>
+		</target>
         <target name="jrun" depends="dist">
                 <java jar="${build.jar.dir}/Labidas.jar" fork="true"/>
         </target>
