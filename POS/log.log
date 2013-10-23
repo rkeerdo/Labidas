@@ -6,4 +6,20 @@
  2013-10-16 13:34:46,404 [ee.ut.math.tvt.Labidas.Intro] - Window has been opened.
  2013-10-16 15:31:40,513 [ee.ut.math.tvt.Labidas.Intro] - Window has been opened.
  2013-10-16 15:37:23,586 [ee.ut.math.tvt.Labidas.Intro] - Window has been opened.
+ 2013-10-23 13:19:40,875 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - New sale process started
+ 2013-10-23 13:19:56,071 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-23 13:19:56,072 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	
+
+ 2013-10-23 13:19:56,072 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-23 13:20:06,921 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-23 13:20:06,921 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	
+
+ 2013-10-23 13:20:06,921 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-23 13:20:09,908 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-23 13:20:09,909 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	
+
+ 2013-10-23 13:20:09,909 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
  
