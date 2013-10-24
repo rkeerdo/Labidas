@@ -1,0 +1,22 @@
+2013-10-23 16:57:56,323 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - New sale process started
+ 2013-10-23 17:05:40,395 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Lays chips quantity of 1
+ 2013-10-23 17:05:53,907 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Chupa-chups quantity of 3
+ 2013-10-23 17:05:58,946 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-23 17:05:58,947 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	
+null	Lays chips	11.0	1	11.0	
+null	Chupa-chups	8.0	3	24.0	
+
+ 2013-10-23 17:05:58,947 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-23 17:06:04,900 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale cancelled
+ 2013-10-23 17:06:42,884 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - New sale process started
+ 2013-10-23 17:06:57,841 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Lays chips quantity of 2
+ 2013-10-23 17:07:05,970 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Chupa-chups quantity of 1
+ 2013-10-23 17:08:19,379 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Chupa-chups quantity of 1
+ 2013-10-23 17:09:04,515 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Chupa-chups quantity of 1
+ 2013-10-23 17:09:05,442 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Chupa-chups quantity of 1
+ 2013-10-24 10:45:59,623 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - New sale process started
+ 2013-10-24 10:46:21,400 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale cancelled
+ 2013-10-24 10:47:15,410 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - New sale process started
+ 2013-10-24 10:47:19,722 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Lays chips quantity of 10
+ 

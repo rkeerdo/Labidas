@@ -2,6 +2,7 @@ package ee.ut.math.tvt.salessystem.ui.panels;
 
 import ee.ut.math.tvt.salessystem.domain.data.SoldItem;
 import ee.ut.math.tvt.salessystem.domain.data.StockItem;
+import ee.ut.math.tvt.salessystem.domain.data.StockItemListable;
 import ee.ut.math.tvt.salessystem.ui.model.SalesSystemModel;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -10,15 +11,28 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+
+import javax.swing.event.PopupMenuEvent;
+import javax.swing.event.PopupMenuListener;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Vector;
+
 import javax.swing.BorderFactory;
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+
+import org.apache.log4j.xml.Log4jEntityResolver;
 
 /**
  * Purchase pane + shopping cart tabel UI.
@@ -32,7 +46,7 @@ public class PurchaseItemPanel extends JPanel {
     private JTextField quantityField;
     private JTextField nameField;
     private JTextField priceField;
-
+    private JComboBox<StockItemListable> productField;
     private JButton addItemButton;
 
     // Warehouse model
@@ -84,9 +98,35 @@ public class PurchaseItemPanel extends JPanel {
         // Initialize the textfields
         barCodeField = new JTextField();
         quantityField = new JTextField("1");
+        quantityField.setEditable(true);
         nameField = new JTextField();
         priceField = new JTextField();
+        productField = new JComboBox<StockItemListable>();
+        productField.setEditable(false);
+        productField.setModel(populateComboBox());
+        productField.addPopupMenuListener(new PopupMenuListener() {
 
+			@Override
+			public void popupMenuCanceled(PopupMenuEvent e) {
+				System.out.println("T1");
+				
+			}
+
+			@Override
+			public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
+				fillDialogFields();
+				System.out.println("T2");
+				
+			}
+
+			@Override
+			public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println("T3");
+				
+			}
+        	
+        });
         // Fill the dialog fields if the bar code text field loses focus
         barCodeField.addFocusListener(new FocusListener() {
             public void focusGained(FocusEvent e) {
@@ -103,16 +143,16 @@ public class PurchaseItemPanel extends JPanel {
         // == Add components to the panel
 
         // - bar code
-        panel.add(new JLabel("Bar code:"));
-        panel.add(barCodeField);
+        panel.add(new JLabel("Product:"));
+        panel.add(productField);
 
         // - amount
         panel.add(new JLabel("Amount:"));
         panel.add(quantityField);
 
         // - name
-        panel.add(new JLabel("Name:"));
-        panel.add(nameField);
+//        panel.add(new JLabel("Name:"));
+//        panel.add(nameField);
 
         // - price
         panel.add(new JLabel("Price:"));
@@ -131,12 +171,26 @@ public class PurchaseItemPanel extends JPanel {
         return panel;
     }
 
+    public ComboBoxModel<StockItemListable> populateComboBox(){
+    	Vector<StockItemListable> newVector = new Vector<StockItemListable>();
+    	try{
+    		List<StockItem> items = model.getWarehouseTableModel().getTableRows();
+    		for(StockItem item : items){
+    			StockItemListable newListable = new StockItemListable(item.getId(), item.getName(), item.getDescription(), item.getPrice());
+    			newVector.add(newListable);
+    		}
+    	} catch(Exception e){
+    		System.err.println("Exception happened. Help! : " + e);
+    	}
+    	ComboBoxModel<StockItemListable> list = new DefaultComboBoxModel<StockItemListable>(newVector);
+    	return list;
+    }
+    
     // Fill dialog with data from the "database".
     public void fillDialogFields() {
-        StockItem stockItem = getStockItemByBarcode();
+        StockItem stockItem = (StockItem) productField.getSelectedItem();
 
         if (stockItem != null) {
-            nameField.setText(stockItem.getName());
             String priceString = String.valueOf(stockItem.getPrice());
             priceField.setText(priceString);
         } else {
@@ -162,7 +216,7 @@ public class PurchaseItemPanel extends JPanel {
      */
     public void addItemEventHandler() {
         // add chosen item to the shopping cart.
-        StockItem stockItem = getStockItemByBarcode();
+        StockItem stockItem = (StockItem) productField.getSelectedItem();
         if (stockItem != null) {
             int quantity;
             try {
