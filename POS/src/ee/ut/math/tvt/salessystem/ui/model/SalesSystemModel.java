@@ -1,8 +1,12 @@
 package ee.ut.math.tvt.salessystem.ui.model;
 
+import java.util.List;
+
 import org.apache.log4j.Logger;
 
 import ee.ut.math.tvt.salessystem.domain.controller.SalesDomainController;
+import ee.ut.math.tvt.salessystem.domain.data.SoldItem;
+import ee.ut.math.tvt.salessystem.helper.WarehouseHelper;
 
 /**
  * Main model. Holds all the other models.
@@ -41,5 +45,12 @@ public class SalesSystemModel {
     public PurchaseInfoTableModel getCurrentPurchaseTableModel() {
         return currentPurchaseTableModel;
     }
-    
+    // If the purchase is cancelled, restocks the warehouse based on shopping cart contents.
+    public void restockCurrentPurchaseTableModel(){
+    	WarehouseHelper helper = new WarehouseHelper(this);
+    	List<SoldItem> items = currentPurchaseTableModel.getTableRows();
+    	for(SoldItem item : items){
+    		helper.increaseWarehouseState(item.getId(), item.getQuantity());
+    	}
+    }
 }
