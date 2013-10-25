@@ -93,4 +93,461 @@ null	Chupa-chups	8.0	1	8.0
  2013-10-24 13:03:45,889 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Lays chips quantity of 5
  2013-10-24 13:03:53,270 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Chupa-chups quantity of 5
  2013-10-24 13:03:58,117 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale cancelled
+ 2013-10-24 13:38:25,893 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - New sale process started
+ 2013-10-24 13:38:34,721 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Lays chips quantity of 1
+ 2013-10-24 13:38:37,587 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 13:38:43,595 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Frankfurters quantity of 1
+ 2013-10-24 13:38:49,911 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Chupa-chups quantity of 1
+ 2013-10-24 13:38:57,787 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale cancelled
+ 2013-10-24 13:38:59,333 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - New sale process started
+ 2013-10-24 13:39:01,261 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Chupa-chups quantity of 1
+ 2013-10-24 13:39:05,699 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Lays chips quantity of 1
+ 2013-10-24 14:09:07,425 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - New sale process started
+ 2013-10-24 14:09:14,196 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Frankfurters quantity of 5
+ 2013-10-24 14:09:27,216 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Frankfurters quantity of 7
+ 2013-10-24 14:09:41,350 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale cancelled
+ 2013-10-24 14:09:47,194 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - New sale process started
+ 2013-10-24 14:10:08,086 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 100
+ 2013-10-24 14:10:15,402 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:10:15,402 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+4	Free Beer	0.0	100	0.0	
+
+ 2013-10-24 14:10:15,402 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:10:24,705 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:10:24,705 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+4	Free Beer	0.0	100	0.0	
+
+ 2013-10-24 14:10:24,705 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:10:25,804 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:10:25,805 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+4	Free Beer	0.0	100	0.0	
+
+ 2013-10-24 14:10:25,805 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:10:26,101 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:10:26,101 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+4	Free Beer	0.0	100	0.0	
+
+ 2013-10-24 14:10:26,102 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:10:26,349 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:10:26,349 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+4	Free Beer	0.0	100	0.0	
+
+ 2013-10-24 14:10:26,349 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:10:32,627 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale cancelled
+ 2013-10-24 14:17:09,251 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - New sale process started
+ 2013-10-24 14:17:14,995 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Frankfurters quantity of 1
+ 2013-10-24 14:17:18,009 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:18,009 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:18,009 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:18,739 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:18,740 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:18,740 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:18,974 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:18,974 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:18,974 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:19,147 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:19,147 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:19,147 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:19,318 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:19,318 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:19,319 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:19,517 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:19,517 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:19,518 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:19,702 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:19,702 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:19,702 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:19,862 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:19,863 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:19,863 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:20,048 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:20,048 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:20,048 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:20,232 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:20,232 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:20,232 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:20,405 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:20,406 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:20,406 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:20,578 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:20,578 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:20,578 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:20,764 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:20,764 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:20,764 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:20,974 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:20,974 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:20,974 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:21,147 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:21,147 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:21,147 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:21,333 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:21,333 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:21,333 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:21,703 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:21,703 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:21,703 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:21,926 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:21,926 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:21,926 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:22,112 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:22,112 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:22,112 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:22,333 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:22,333 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:22,333 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:24,755 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:24,755 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:24,755 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:24,964 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:24,964 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:24,964 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:25,150 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:25,151 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+
+ 2013-10-24 14:17:25,151 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:27,832 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Chupa-chups quantity of 1
+ 2013-10-24 14:17:32,588 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:32,588 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+2	Chupa-chups	8.0	1	8.0	
+
+ 2013-10-24 14:17:32,588 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:32,872 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:32,872 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+2	Chupa-chups	8.0	1	8.0	
+
+ 2013-10-24 14:17:32,872 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:33,107 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:33,107 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+2	Chupa-chups	8.0	1	8.0	
+
+ 2013-10-24 14:17:33,107 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:33,305 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:33,305 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+2	Chupa-chups	8.0	1	8.0	
+
+ 2013-10-24 14:17:33,305 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:33,502 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:33,502 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+2	Chupa-chups	8.0	1	8.0	
+
+ 2013-10-24 14:17:33,502 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:33,676 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:33,676 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+2	Chupa-chups	8.0	1	8.0	
+
+ 2013-10-24 14:17:33,676 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:33,861 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:33,861 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+2	Chupa-chups	8.0	1	8.0	
+
+ 2013-10-24 14:17:33,861 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:34,009 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:34,009 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+2	Chupa-chups	8.0	1	8.0	
+
+ 2013-10-24 14:17:34,009 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:17:34,183 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:17:34,183 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+3	Frankfurters	15.0	1	15.0	
+2	Chupa-chups	8.0	1	8.0	
+
+ 2013-10-24 14:17:34,183 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:54:18,929 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - New sale process started
+ 2013-10-24 14:54:27,783 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:29,177 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:29,375 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:29,560 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:29,747 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:29,918 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:30,104 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:30,292 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:30,500 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:30,735 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:30,958 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:31,180 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:31,378 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:31,576 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:31,774 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:31,958 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:32,144 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:32,329 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:32,516 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:32,712 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:32,886 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:33,072 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:33,244 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:33,432 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:33,602 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:33,801 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:33,998 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:34,183 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:34,356 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:34,531 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:34,716 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:34,888 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:35,062 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:35,248 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:35,420 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:35,618 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:35,804 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:35,977 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:36,161 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:36,334 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:36,520 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:36,694 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:36,880 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:37,065 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:37,251 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:37,423 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:37,621 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:37,794 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:37,980 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:38,226 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:38,412 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:42,058 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:42,245 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:42,429 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:42,639 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:42,863 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:43,085 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:43,284 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:43,469 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:43,666 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:43,866 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:44,062 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:44,235 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:44,432 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:44,656 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:44,879 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:45,102 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:45,287 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:45,497 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:45,708 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:45,893 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:46,090 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:46,301 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:46,523 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:46,710 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:46,907 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:47,092 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:47,290 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:47,488 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:47,684 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:47,859 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:48,057 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:48,242 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:48,415 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:48,576 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:48,749 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:48,921 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:49,095 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:49,268 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:49,453 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:50,046 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:50,219 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:50,380 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:50,578 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:50,763 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:50,937 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:51,123 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:51,297 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:51,493 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:54:51,666 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
+ 2013-10-24 14:55:12,360 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-24 14:55:12,362 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+4	Free Beer	0.0	1	0.0	
+
+ 2013-10-24 14:55:12,362 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Underaged!
+ 2013-10-24 14:55:17,455 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale cancelled
  

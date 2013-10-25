@@ -28,7 +28,8 @@ public class IntroUI {
 	private void addWindowSettings() {
 		window = new JFrame();
 		window.setTitle("Intro");
-		window.setSize(800,600);
+		window.setSize(350	, 400);
+		window.setResizable(false);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setLayout(null);
 		window.setVisible(true);

@@ -3,9 +3,10 @@ package ee.ut.math.tvt.salessystem.ui.panels;
 import ee.ut.math.tvt.salessystem.domain.data.SoldItem;
 import ee.ut.math.tvt.salessystem.domain.data.StockItem;
 import ee.ut.math.tvt.salessystem.domain.data.StockItemListable;
-import ee.ut.math.tvt.salessystem.helper.WarehouseHelper;
-import ee.ut.math.tvt.salessystem.helper.WarehouseStateException;
 import ee.ut.math.tvt.salessystem.ui.model.SalesSystemModel;
+import ee.ut.math.tvt.salessystem.utils.WarehouseHelper;
+import ee.ut.math.tvt.salessystem.utils.WarehouseStateException;
+
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -107,21 +108,17 @@ public class PurchaseItemPanel extends JPanel {
 
 			@Override
 			public void popupMenuCanceled(PopupMenuEvent e) {
-				System.out.println("T1");
-
+				fillDialogFields();
 			}
 
 			@Override
 			public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
 				fillDialogFields();
-				System.out.println("T2");
 
 			}
 
 			@Override
 			public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
-				// TODO Auto-generated method stub
-				System.out.println("T3");
 
 			}
 

@@ -156,7 +156,7 @@ public class PurchaseTab {
     try {
       domainController.cancelCurrentPurchase();
       endSale();
-      //TODO : refund warehouse state.
+      // Refunds warehouse stock.
       model.restockCurrentPurchaseTableModel();
       model.getCurrentPurchaseTableModel().clear();
     } catch (VerificationFailedException e1) {
