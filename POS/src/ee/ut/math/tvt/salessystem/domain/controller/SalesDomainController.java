@@ -5,6 +5,7 @@ import java.util.List;
 import ee.ut.math.tvt.salessystem.domain.data.SoldItem;
 import ee.ut.math.tvt.salessystem.domain.data.StockItem;
 import ee.ut.math.tvt.salessystem.domain.exception.VerificationFailedException;
+import ee.ut.math.tvt.salessystem.ui.model.SalesSystemModel;
 
 /**
  * Sales domain controller is responsible for the domain specific business
@@ -45,5 +46,6 @@ public interface SalesDomainController {
     public void submitCurrentPurchase(List<SoldItem> goods)
             throws VerificationFailedException;
 
-    
+    /**Alternate Method for submitting purchase and storing it in history.*/
+	public void submitCurrentPurchase(List<SoldItem> goods, SalesSystemModel model) throws VerificationFailedException;
 }

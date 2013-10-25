@@ -11,6 +11,12 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -166,18 +172,19 @@ public class PurchaseTab {
   }
 
 
-  /** Event handler for the <code>submit purchase</code> event. */
-  protected void submitPurchaseButtonClicked() {
+  /** Event handler for the <code>submit purchase</code> event. 
+ * @throws InterruptedException */
+  protected void submitPurchaseButtonClicked()  {
     log.info("Sale complete");
     try {
       PurchaseConfirmationPanel confirmPay = new PurchaseConfirmationPanel(model);
       //Moved the purchase logic into payment confirmation panel.
       //TODO : Move the purchase logic, rework how submit works.
-      
       log.debug("Contents of the current basket:\n" + model.getCurrentPurchaseTableModel());
       domainController.submitCurrentPurchase(
-          model.getCurrentPurchaseTableModel().getTableRows()
-      );
+          model.getCurrentPurchaseTableModel().getTableRows(), model );
+      
+      boolean randomflag = true;
       endSale();
       model.getCurrentPurchaseTableModel().clear();
     } catch (VerificationFailedException e1) {

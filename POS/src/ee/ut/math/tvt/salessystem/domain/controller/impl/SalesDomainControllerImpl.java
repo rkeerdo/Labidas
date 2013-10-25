@@ -5,8 +5,10 @@ import java.util.List;
 
 import ee.ut.math.tvt.salessystem.domain.exception.VerificationFailedException;
 import ee.ut.math.tvt.salessystem.domain.controller.SalesDomainController;
+import ee.ut.math.tvt.salessystem.domain.data.HistoryItem;
 import ee.ut.math.tvt.salessystem.domain.data.SoldItem;
 import ee.ut.math.tvt.salessystem.domain.data.StockItem;
+import ee.ut.math.tvt.salessystem.ui.model.SalesSystemModel;
 
 /**
  * Implementation of the sales domain controller.
@@ -19,6 +21,11 @@ public class SalesDomainControllerImpl implements SalesDomainController {
 		// Disabled for temporary debugging purposes.
 		//throw new VerificationFailedException("Underaged!");
 		// XXX - Save purchase
+		
+	}
+	public void submitCurrentPurchase(List<SoldItem> goods, SalesSystemModel model) throws VerificationFailedException {
+		HistoryItem item = new HistoryItem(goods);
+		model.getHistoryTableModel().addItem(item);
 	}
 
 	public void cancelCurrentPurchase() throws VerificationFailedException {				
