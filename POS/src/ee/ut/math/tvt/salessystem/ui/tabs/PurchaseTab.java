@@ -3,6 +3,7 @@ package ee.ut.math.tvt.salessystem.ui.tabs;
 import ee.ut.math.tvt.salessystem.domain.exception.VerificationFailedException;
 import ee.ut.math.tvt.salessystem.domain.controller.SalesDomainController;
 import ee.ut.math.tvt.salessystem.ui.model.SalesSystemModel;
+import ee.ut.math.tvt.salessystem.ui.panels.PurchaseConfirmationPanel;
 import ee.ut.math.tvt.salessystem.ui.panels.PurchaseItemPanel;
 import java.awt.Color;
 import java.awt.Component;
@@ -169,6 +170,10 @@ public class PurchaseTab {
   protected void submitPurchaseButtonClicked() {
     log.info("Sale complete");
     try {
+      PurchaseConfirmationPanel confirmPay = new PurchaseConfirmationPanel(model);
+      //Moved the purchase logic into payment confirmation panel.
+      //TODO : Move the purchase logic, rework how submit works.
+      
       log.debug("Contents of the current basket:\n" + model.getCurrentPurchaseTableModel());
       domainController.submitCurrentPurchase(
           model.getCurrentPurchaseTableModel().getTableRows()
