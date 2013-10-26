@@ -22,13 +22,10 @@ public class HistoryDetailPanel extends JFrame {
 	private PurchaseInfoTableModel infoTable;
 	private HistoryItem items;
 	private JLabel text;
-	private boolean openFlag;
 	private JScrollPane scrollPane;
 	/**Creates a frame which displays the given order details.*/
-	public HistoryDetailPanel(HistoryItem item, boolean OpenFlag){
+	public HistoryDetailPanel(HistoryItem item){
 		this.items = item;
-		this.openFlag = OpenFlag;
-		openFlag = true;
 		infoTable = new PurchaseInfoTableModel();
 		initList();
 		initGui();
@@ -51,57 +48,7 @@ public class HistoryDetailPanel extends JFrame {
 	private void initList(){
 		List<SoldItem> orderItems = items.getSoldItems();
 		for(SoldItem item : orderItems){
-			infoTable.addItem(item);
+			infoTable.addItemNoDebug(item);
 		}
-	}
-	private void setClosingAction(){
-		this.addWindowListener(new WindowListener(){
-
-			@Override
-			public void windowActivated(WindowEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void windowClosed(WindowEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void windowClosing(WindowEvent arg0) {
-				disableFlag();			
-			}
-
-			@Override
-			public void windowDeactivated(WindowEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void windowDeiconified(WindowEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void windowIconified(WindowEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void windowOpened(WindowEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-		});
-	}
-	private void disableFlag(){
-		openFlag = false;
-		this.dispose();
 	}
 }

@@ -66,4 +66,9 @@ public class PurchaseInfoTableModel extends SalesSystemTableModel<SoldItem> {
         log.debug("Added " + item.getName() + " quantity of " + item.getQuantity());
         fireTableDataChanged();
     }
+    /**Adds the item without debugging. Useful when constructing temporary tables.*/
+    public void addItemNoDebug(final SoldItem item) {
+    	rows.add(item);
+    	fireTableDataChanged();
+    }
 }

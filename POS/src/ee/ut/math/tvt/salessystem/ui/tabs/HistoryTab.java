@@ -3,6 +3,8 @@ package ee.ut.math.tvt.salessystem.ui.tabs;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -24,6 +26,9 @@ private SalesDomainController controller;
 private SalesSystemModel model;
 private JTable table;
 private boolean openFlag = false;
+private HistoryDetailPanel panel;
+	/**Creates a new historyTab with the given controller and model.
+	 **/
     public HistoryTab(SalesDomainController controller, SalesSystemModel model) {
     	this.controller = controller;
     	this.model = model;
@@ -44,7 +49,6 @@ private boolean openFlag = false;
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				if(arg0.getClickCount()==1 && !openFlag){
-					System.out.println("ACTIVE");
 					createDetailPopup();	
 				}
 			}
@@ -78,6 +82,51 @@ private boolean openFlag = false;
     private void createDetailPopup(){
     	int index = table.getSelectedRow();
     	HistoryItem history = model.getHistoryTableModel().getTableRows().get(index);
-    	HistoryDetailPanel panel = new HistoryDetailPanel(history, openFlag);
+    	panel = new HistoryDetailPanel(history);
+    	openFlag = true;
+    	panel.addWindowListener(new WindowListener(){
+
+			@Override
+			public void windowActivated(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void windowClosed(WindowEvent e) {
+
+			}
+
+			@Override
+			public void windowClosing(WindowEvent e) {
+				openFlag = false;
+				panel.dispose();
+			}
+
+			@Override
+			public void windowDeactivated(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void windowDeiconified(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void windowIconified(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void windowOpened(WindowEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+    		
+    	});
     }
 }
