@@ -15,6 +15,8 @@ import java.awt.event.ActionListener;
 
 import javax.swing.event.PopupMenuEvent;
 import javax.swing.event.PopupMenuListener;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -123,7 +125,16 @@ public class PurchaseItemPanel extends JPanel {
 			}
 
 		});
+		// Refreshes the list in case it is changed during operation.
+		model.getWarehouseTableModel().addTableModelListener(new TableModelListener(){
 
+			@Override
+			public void tableChanged(TableModelEvent e) {
+				refreshComboList();				
+			}
+			
+		});
+		
 		priceField.setEditable(false);
 
 		// == Add components to the panel
@@ -230,6 +241,9 @@ public class PurchaseItemPanel extends JPanel {
 				e.printStackTrace();
 			}
 		}
+	}
+	private void refreshComboList(){
+		productField.setModel(populateComboBox());
 	}
 	
 	
