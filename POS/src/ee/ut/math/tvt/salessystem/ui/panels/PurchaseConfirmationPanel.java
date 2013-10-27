@@ -1,13 +1,17 @@
 package ee.ut.math.tvt.salessystem.ui.panels;
 
 import java.awt.Container;
+
+
 import java.awt.Dimension;
+import java.awt.Dialog.ModalityType;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -21,35 +25,41 @@ import ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel;
 import ee.ut.math.tvt.salessystem.ui.model.SalesSystemModel;
 import ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab;
 
-public class PurchaseConfirmationPanel extends JFrame {
-private JLabel orderSumLabel;
-private JTextField orderSum;
-private JLabel orderPaymentLabel;
-private JTextField orderPayment;
-private JLabel orderChangeLabel;
-private JTextField orderChange;
-private JButton acceptPayment;
-private JButton cancelPayment;
-private SalesSystemModel model;
-private JPanel combinationPanel;
-private JPanel fieldPanel;
-private Container container;
-private static final Logger log = Logger.getLogger(PurchaseConfirmationPanel.class);
+
+public class PurchaseConfirmationPanel extends JDialog {
+	private JLabel orderSumLabel;
+	private JTextField orderSum;
+	private JLabel orderPaymentLabel;
+	private JTextField orderPayment;
+	private JLabel orderChangeLabel;
+	private JTextField orderChange;
+	private JButton acceptPayment;
+	private JButton cancelPayment;
+	private SalesSystemModel model;
+	private JPanel combinationPanel;
+	private JPanel fieldPanel;
+	private Container container;
+	private static final Logger log = Logger.getLogger(PurchaseConfirmationPanel.class);
 	/**Constructs a new PurchaseConfirmationPanel using the given SalesSystemModel containing warehouse and sales data.
 	 * @param SalesSystemModel model - the model all information will be parsed from.
 	 */
 	public PurchaseConfirmationPanel(SalesSystemModel model){
 		this.model = model;
-		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-		this.setSize(400, 400);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		this.setSize(400, 100);
+		this.setTitle("Confirmation");
 		initGui();
 		fillGui();
 		addListeners();
 		this.setName("Purchase confirmation");
 		this.add(fieldPanel);
+		this.setLocationRelativeTo(null);
+		this.setModalityType(ModalityType.APPLICATION_MODAL);
+		this.setAlwaysOnTop(true);
+		this.setResizable(false);
 		this.setVisible(true);
 	}
-	
+
 	private double getSoldSum(){
 		double sum = 0;
 		PurchaseInfoTableModel purchaseModel = model.getCurrentPurchaseTableModel();
@@ -93,6 +103,19 @@ private static final Logger log = Logger.getLogger(PurchaseConfirmationPanel.cla
 		fieldPanel.add(cancelPayment);
 	}
 	private void addListeners(){
+		
+		cancelPayment.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				dispose();
+			}
+		});
+		
+		acceptPayment.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				dispose();
+			}
+		});
+		
 		orderPayment.addCaretListener(new CaretListener(){
 
 			@Override
@@ -108,18 +131,18 @@ private static final Logger log = Logger.getLogger(PurchaseConfirmationPanel.cla
 					if(!(orderPayment.getText().length()==0))	orderChange.setText("Fix the damned number format.");
 				}
 			}
-			
+
 		});
 		acceptPayment.addActionListener(new ActionListener(){
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				
+
 			}
-			
+
 		});
 	}
 	private void completeSale(){
-		
+
 	}
 }
