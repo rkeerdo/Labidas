@@ -812,4 +812,40 @@ Id	Name	Price	Quantity	Sum
  2013-10-26 00:15:53,482 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
  2013-10-26 00:15:53,483 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Free Beer quantity of 1
  2013-10-26 00:15:53,483 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Lays chips quantity of 2
+ 2013-10-27 01:22:57,513 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - New sale process started
+ 2013-10-27 01:23:05,811 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Lays chips quantity of 1
+ 2013-10-27 01:23:07,313 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-27 01:23:07,313 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+1	Lays chips	11.0	1	11.0	
+
+ 2013-10-27 01:23:07,329 [ee.ut.math.tvt.salessystem.ui.model.HistoryTableModel] - Added item ID : 1
+ 2013-10-27 01:31:51,855 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - New sale process started
+ 2013-10-27 01:31:56,887 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Chupa-chups quantity of 1
+ 2013-10-27 01:31:57,904 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-27 01:31:57,921 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+2	Chupa-chups	8.0	1	8.0	
+
+ 2013-10-27 01:31:57,921 [ee.ut.math.tvt.salessystem.ui.model.HistoryTableModel] - Added item ID : 1
+ 2013-10-27 15:35:16,132 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - New sale process started
+ 2013-10-27 15:35:18,163 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-27 15:35:18,257 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+
+ 2013-10-27 15:35:18,257 [ee.ut.math.tvt.salessystem.ui.model.HistoryTableModel] - Added item ID : 1
+ 2013-10-27 23:05:13,948 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - New sale process started
+ 2013-10-27 23:05:16,700 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-27 23:05:24,872 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+
+ 2013-10-27 23:05:24,872 [ee.ut.math.tvt.salessystem.ui.model.HistoryTableModel] - Added item ID : 1
+ 2013-10-27 23:05:44,998 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - New sale process started
+ 2013-10-27 23:05:47,514 [ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel] - Added Lays chips quantity of 1
+ 2013-10-27 23:05:48,686 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Sale complete
+ 2013-10-27 23:05:54,986 [ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab] - Contents of the current basket:
+Id	Name	Price	Quantity	Sum	
+1	Lays chips	11.0	1	11.0	
+
+ 2013-10-27 23:05:54,986 [ee.ut.math.tvt.salessystem.ui.model.HistoryTableModel] - Added item ID : 2
  
