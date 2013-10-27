@@ -88,6 +88,7 @@
             </exec>
              <exec executable="git">
                 	<arg value="push"/>
+                	<arg value="https://github.com/eestikaa/Labidas.git"/>
                 	
             </exec>
         </target>
