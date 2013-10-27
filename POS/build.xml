@@ -77,15 +77,6 @@
                 message="Please enter commit comment"
                 addproperty="commit.comment"
                 />
-            <input
-                message="Please enter your Git username:"
-                addproperty="commit.username"
-                />
-            <input
-                message="Please enter your Git password:"
-                addproperty="commit.password"
-                >
-				</input>
             <exec executable="cmd">
                 <arg value="/c"/>
                 	<arg value="git"/>
@@ -103,7 +94,7 @@
                 <arg value="/c"/>
                 	<arg value="git"/>
                 	<arg value="push"/>
-                	<arg value="https://${commit.username}:${commit.password}@github.com/eestikaa/Labidas.git"/>
+                	<arg value="https://github.com/eestikaa/Labidas.git"/>
             </exec>
         </target>
         
