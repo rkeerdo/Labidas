@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.NoSuchElementException;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -14,6 +15,8 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
+import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
 
 import ee.ut.math.tvt.salessystem.domain.data.StockItem;
 import ee.ut.math.tvt.salessystem.ui.model.SalesSystemModel;
@@ -37,7 +40,7 @@ public class WarehouseEntryPanel extends JFrame {
 		this.setName("Warehouse tab");
 		tabPane = new JTabbedPane();
 		initNewItemGui();
-		initPane1Button();
+		initPane1Listeners();
 		this.setSize(300,400);
 		this.setMinimumSize(new Dimension(300, 400));
 		this.setResizable(false);
@@ -93,7 +96,32 @@ public class WarehouseEntryPanel extends JFrame {
 	private void initExistingItemGui(){
 		
 	}
-	private void initPane1Button(){
+	private void initPane1Listeners(){
+		idField.addCaretListener(new CaretListener(){
+
+			@Override
+			public void caretUpdate(CaretEvent arg0) {
+				try{
+					long id = Long.parseLong(idField.getText());
+					StockItem existingItem = model.getWarehouseTableModel().getItemById(id);
+					nameField.setEnabled(false);
+					nameField.setText(existingItem.getName());
+					priceField.setEnabled(false);
+					priceField.setText(String.valueOf(existingItem.getPrice()));
+					
+				} catch(NumberFormatException e){
+					if(!(idField.getText().length()==0)){
+						JOptionPane.showMessageDialog(null, "Please enter the ID in a correct format");
+					}
+				} catch(NoSuchElementException e1){
+					priceField.setEnabled(true);
+					nameField.setEnabled(true);
+					//Do nothing, element does not exist in warehouse.
+				}
+				
+			}
+			
+		});
 		submitPane1.addActionListener(new ActionListener(){
 
 			@Override
@@ -101,6 +129,7 @@ public class WarehouseEntryPanel extends JFrame {
 				StockItem newItem = constructStockItem();
 				if(!(newItem==null)){
 					model.getWarehouseTableModel().addItem(newItem);
+					dispose();
 				}
 			}
 			

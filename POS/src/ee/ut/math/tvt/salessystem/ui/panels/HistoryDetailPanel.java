@@ -39,7 +39,7 @@ public class HistoryDetailPanel extends JFrame {
 		scrollPane.setViewportView(orderDetailList);
 		comboPanel.setLayout(new BorderLayout());
 		comboPanel.add(text, BorderLayout.NORTH);
-		comboPanel.add(orderDetailList, BorderLayout.CENTER);
+		comboPanel.add(scrollPane, BorderLayout.CENTER);
 		text.setText("Details for order no: " + items.getId() + "@" + items.getDateTaken() + " :: " + items.getTimeTaken());
 		this.add(comboPanel);
 		this.setVisible(true);

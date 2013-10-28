@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.event.CaretEvent;
@@ -39,6 +40,7 @@ public class PurchaseConfirmationPanel extends JDialog {
 	private JPanel combinationPanel;
 	private JPanel fieldPanel;
 	private Container container;
+	private boolean orderConfirmed = false;
 	private static final Logger log = Logger.getLogger(PurchaseConfirmationPanel.class);
 	/**Constructs a new PurchaseConfirmationPanel using the given SalesSystemModel containing warehouse and sales data.
 	 * @param SalesSystemModel model - the model all information will be parsed from.
@@ -105,12 +107,7 @@ public class PurchaseConfirmationPanel extends JDialog {
 	private void addListeners(){
 		
 		cancelPayment.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent event) {
-				dispose();
-			}
-		});
-		
-		acceptPayment.addActionListener(new ActionListener() {
+			@Override
 			public void actionPerformed(ActionEvent event) {
 				dispose();
 			}
@@ -137,12 +134,43 @@ public class PurchaseConfirmationPanel extends JDialog {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-
+				completeSale();
 			}
 
 		});
 	}
 	private void completeSale(){
-
+		int i = checkForErrors();
+		if(i==0){
+			this.setAlwaysOnTop(false);
+			JOptionPane.showMessageDialog(null, "Invalid parameters. Try again with new inputs.");
+		} else if(i==2){
+			this.setAlwaysOnTop(false);
+			JOptionPane.showMessageDialog(null, "Payment must be bigger or equal to the order sum.");
+		} else {
+			orderConfirmed = true;
+			this.dispose();
+			return;
+		}
+		this.setAlwaysOnTop(true);
+	}
+	
+	private int checkForErrors(){
+		// 0 for error, 1 for success, 2 for invalid change.
+		double changeCheck;
+		try{
+			changeCheck = Double.parseDouble(orderChange.getText());
+		} catch (NumberFormatException e){
+			return 0;
+		}
+		if(changeCheck>=0){
+			return 1;
+		} else {
+			return 2;
+		}
+	}
+	// return true if the order has been confirmed.
+	public boolean orderComplete(){
+		return orderConfirmed;
 	}
 }
