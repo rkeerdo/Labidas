@@ -20,6 +20,7 @@ import javax.swing.event.CaretListener;
 
 import ee.ut.math.tvt.salessystem.domain.data.StockItem;
 import ee.ut.math.tvt.salessystem.ui.model.SalesSystemModel;
+import ee.ut.math.tvt.salessystem.utils.WarehouseHelper;
 
 public class WarehouseEntryPanel extends JFrame {
 	private JTextField idField;
@@ -35,7 +36,9 @@ public class WarehouseEntryPanel extends JFrame {
 	private JTabbedPane tabPane;
 	private JButton submitPane1;
 	private JScrollPane scrollPane1;
+	private WarehouseHelper helper;
 	public WarehouseEntryPanel(SalesSystemModel model) {
+		helper = new WarehouseHelper(model);
 		this.model = model;
 		this.setName("Warehouse tab");
 		tabPane = new JTabbedPane();
@@ -81,7 +84,7 @@ public class WarehouseEntryPanel extends JFrame {
 		comboQuantity.add(quantityLabel);
 		comboQuantity.add(quantityField);
 		idField.setToolTipText("Must be of \'long' data type");
-		nameField.setToolTipText("May be left empty.");
+		nameField.setToolTipText("Name of the product. Must not be empty.");
 		priceField.setToolTipText("Must be of \'double' data type");
 		quantityField.setToolTipText("Must be of \'int' data type");
 		layoutPanel.add(comboID);
@@ -128,8 +131,14 @@ public class WarehouseEntryPanel extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				StockItem newItem = constructStockItem();
 				if(!(newItem==null)){
-					model.getWarehouseTableModel().addItem(newItem);
-					dispose();
+					int quantity = newItem.getQuantity();
+					long id = newItem.getId();
+					if(helper.canOrderQuantity(id, -quantity)){
+						model.getWarehouseTableModel().addItem(newItem);
+						dispose();
+					} else {
+						JOptionPane.showMessageDialog(null, "Warehouse item quantity cannot be set to negative.");
+					}
 				}
 			}
 			

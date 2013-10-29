@@ -66,7 +66,7 @@ private SalesSystemModel model;
 		}
 	}
 	/**Increases the warehouse state of the given item by the given amount. If the item is not present in the warehouse, throws a NoSuchElementException
-	 * @throws NoSuchElementException - item is missing from the warehouse.
+	 * @throws NoSuchElementException - item is missing from the warehouse. This method differs from addItem(StockItem item) by the fact that it does not require a StockItem.
 	 * @param productID - the ID of the chosen product
 	 * @param quantity - the quantity to be decreased.*/
 	public void increaseWarehouseState (long productID, int quantity) throws NoSuchElementException {

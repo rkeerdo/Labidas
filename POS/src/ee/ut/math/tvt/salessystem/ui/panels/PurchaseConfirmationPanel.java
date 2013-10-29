@@ -170,6 +170,8 @@ public class PurchaseConfirmationPanel extends JDialog {
 		}
 	}
 	// return true if the order has been confirmed.
+	/**Checks if the order has been completed and confirmed. 
+	 * @return boolean orderConfirmed - true if order has been confirmed.*/
 	public boolean orderComplete(){
 		return orderConfirmed;
 	}
