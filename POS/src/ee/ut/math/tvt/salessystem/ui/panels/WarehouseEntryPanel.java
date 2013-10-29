@@ -2,6 +2,8 @@ package ee.ut.math.tvt.salessystem.ui.panels;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.NoSuchElementException;
@@ -15,6 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
+import javax.swing.SpringLayout;
 import javax.swing.event.CaretEvent;
 import javax.swing.event.CaretListener;
 
@@ -40,12 +43,13 @@ public class WarehouseEntryPanel extends JFrame {
 	public WarehouseEntryPanel(SalesSystemModel model) {
 		helper = new WarehouseHelper(model);
 		this.model = model;
+		this.setTitle("Add items");
 		this.setName("Warehouse tab");
 		tabPane = new JTabbedPane();
 		initNewItemGui();
 		initPane1Listeners();
-		this.setSize(300,400);
-		this.setMinimumSize(new Dimension(300, 400));
+		this.setSize(250,300);
+		this.setMinimumSize(new Dimension(250, 300));
 		this.setResizable(false);
 		this.add(tabPane);
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -68,7 +72,7 @@ public class WarehouseEntryPanel extends JFrame {
 		priceLabel = new JLabel("Item price:");
 		quantityLabel = new JLabel("Item quantity");
 		layoutPanel = new JPanel();
-		layoutPanel.setLayout(new BoxLayout(layoutPanel, BoxLayout.Y_AXIS));
+		layoutPanel.setLayout(new GridLayout(5, 1));
 		submitPane1 = new JButton("Submit");
 		scrollPane1 = new JScrollPane(layoutPanel);
 		JPanel comboID = new JPanel();

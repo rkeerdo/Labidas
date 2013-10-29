@@ -1,6 +1,9 @@
 package ee.ut.math.tvt.salessystem.ui.tabs;
 
 import java.awt.Component;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
@@ -36,6 +39,9 @@ private HistoryDetailPanel panel;
     
     public Component draw() {
         JPanel panel = new JPanel();
+
+        panel.setLayout(new GridLayout(1, 1));
+
         table = new JTable(model.getHistoryTableModel());
 		JScrollPane scrollPane = new JScrollPane(table);
 		panel.add(scrollPane);
