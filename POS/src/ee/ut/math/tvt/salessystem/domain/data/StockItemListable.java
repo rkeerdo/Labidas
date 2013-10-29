@@ -1,7 +1,7 @@
 package ee.ut.math.tvt.salessystem.domain.data;
 
 public class StockItemListable extends StockItem{
-
+	/**Listable stock item for use with a combobox. Shows only StockItem name.*/
 	public StockItemListable() {
 		super();
 		// TODO Auto-generated constructor stub
