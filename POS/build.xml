@@ -102,6 +102,34 @@
                 	
             </exec>
         </target>
+	
+	<target name = "git_tag" description="Add tag to Git repository">
+		<input
+			                message="Please enter homework number"
+			                addproperty="tag.number"
+			                />
+		<input
+		                message="Please enter git username"
+		                addproperty="commit.username"
+		                />
+		            <input
+		                message="Please enter git passowrd"
+		                addproperty="commit.password"
+		                />
+			            <exec executable="git">
+			                	<arg value="tag"/>
+			                	<arg value="-a"/>
+			            	<arg value="homework_${tag.number}"/>
+			            	<arg value="-m"/>
+			            	<arg value="Homework ${tag.number}"/>
+			            </exec>
+	             <exec executable="git">
+	                	<arg value="push"/>
+	                	<arg value="--tags"/>
+	             		<arg value="https://${commit.username}:${commit.password}@github.com/eestikaa/Labidas.git"/>
+	             	    <arg value="master"/>
+	            </exec>
+	        </target>
         
  
 </project>
