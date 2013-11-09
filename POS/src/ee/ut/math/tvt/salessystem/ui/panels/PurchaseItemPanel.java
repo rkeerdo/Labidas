@@ -4,8 +4,8 @@ import ee.ut.math.tvt.salessystem.domain.data.SoldItem;
 import ee.ut.math.tvt.salessystem.domain.data.StockItem;
 import ee.ut.math.tvt.salessystem.domain.data.StockItemListable;
 import ee.ut.math.tvt.salessystem.ui.model.SalesSystemModel;
-import ee.ut.math.tvt.salessystem.utils.WarehouseHelper;
-import ee.ut.math.tvt.salessystem.utils.WarehouseStateException;
+import ee.ut.math.tvt.salessystem.util.WarehouseHelper;
+import ee.ut.math.tvt.salessystem.util.WarehouseStateException;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;

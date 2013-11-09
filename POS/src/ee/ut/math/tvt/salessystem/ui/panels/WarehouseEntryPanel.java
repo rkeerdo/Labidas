@@ -23,7 +23,7 @@ import javax.swing.event.CaretListener;
 
 import ee.ut.math.tvt.salessystem.domain.data.StockItem;
 import ee.ut.math.tvt.salessystem.ui.model.SalesSystemModel;
-import ee.ut.math.tvt.salessystem.utils.WarehouseHelper;
+import ee.ut.math.tvt.salessystem.util.WarehouseHelper;
 
 public class WarehouseEntryPanel extends JFrame {
 	private JTextField idField;

@@ -1,135 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project basedir="." name="POS" default="build">
- 
-        <property name="build.dir" value="${basedir}/build"/>
-        <property name="build.classes.dir" value="${build.dir}/classes"/>
-        <property name="build.jar.dir" value="${build.dir}/jar"/>
-        <property name="src.dir" value="${basedir}/src"/>
- 
-        <path id="compile.classpath">
-                <fileset dir="lib">
-                        <include name="*.jar"/>
-                </fileset>
-        </path>
- 
-        <path id="test.classpath">
-                <pathelement location="${build.classes.dir}"/>
-                <!-- configuration -->
-                <pathelement location="${conf.dir}"/>
-                <fileset dir="lib">
-                        <include name="*.jar"/>
-                </fileset>
-        </path>
- 
-         <target name="build" depends="clean" description="Build the system">
-                <mkdir dir="${build.dir}"/>
-                <mkdir dir="${build.classes.dir}"/>
-                <javac
-            srcdir="${src.dir}"
-            destdir="${build.classes.dir}"
-                        includeantruntime="false">
-                        <classpath refid="compile.classpath"/>
-                </javac>
-        </target>
- 
-        <target name="run" depends="build" description="Run the application">
-                <java classname="ee.ut.math.tvt.Labidas.Intro" classpathref="test.classpath" fork="yes" />
-        </target>
-       
-        <target name="dist" depends="build" description = "Build the .jar and change version property.">
-                <mkdir dir="${build.jar.dir}"/>
-                        <jar
-                                destfile="${build.jar.dir}/Labidas.jar"
-                                basedir="${build.classes.dir}">
-                                <manifest>
-                                        <attribute name="Main-Class" value="ee.ut.math.tvt.Labidas.Intro"/>
-                                </manifest>
-                                <zipgroupfileset dir="${basedir}/lib" includes="**/*.jar"/>
-                        </jar>
-                <copy file="res/LABIDAS.jpg" todir="${build.jar.dir}"/>
-                <copy todir="${build.jar.dir}">
-                        <fileset dir="${basedir}" includes="**.properties"/>
-                </copy>
-                <propertyfile file="${basedir}/version.properties">
-                        <entry key="build.revision.number" type="int" operation="+" value="1"/>
-                        <entry key="build.number" operation="=" value="${build.revision.number}"/>
-                </propertyfile>
-                <property file="${basedir}/version.properties" prefix="file"/>
-                <propertyfile file="${basedir}/version.properties">
-                        <entry key="build.number" operation="=" value="${file.build.major.number}.${file.build.minor.number}.${file.build.revision.number}"/>
-                </propertyfile>
-                       
-        </target>
-		<target name="runc" depends="build" description="Run the application (console)">
-			<java classname="ee.ut.math.tvt.Labidas.Intro" classpathref="test.classpath" fork="yes">
-				<arg value="console" />
-			</java>
-		</target>
-        <target name="jrun" depends="dist">
-                <java jar="${build.jar.dir}/Labidas.jar" fork="true"/>
-        </target>
- 
-        <target name="clean" description="Clean up build system results">
-                <delete dir="${build.dir}"/>
-        </target>
-        <target name = "git_commit" description="Commit changes to Git repositiory">
-            <input
-                message="Please enter commit comment"
-                addproperty="commit.comment"
-                />
-            <input
-                message="Please enter git username"
-                addproperty="commit.username"
-                />
-            <input
-                message="Please enter git passowrd"
-                addproperty="commit.password"
-                />
-            
-            <exec executable="git">
-                	<arg value="add"/>
-                	<arg value="-A"/>
-            </exec>
-             <exec executable="git">
-                	<arg value="commit"/>
-                	<arg value="-m"/>
-                	<arg value="${commit.comment}"/>
-            </exec>
-             <exec executable="git">
-                	<arg value="push"/>
-                	<arg value="https://${commit.username}:${commit.password}@github.com/eestikaa/Labidas.git"/>
-                	<arg value="master"/>
-                	
-            </exec>
-        </target>
-	
-	<target name = "git_tag" description="Add tag to Git repository">
-		<input
-			                message="Please enter homework number"
-			                addproperty="tag.number"
-			                />
-		<input
-		                message="Please enter git username"
-		                addproperty="commit.username"
-		                />
-		            <input
-		                message="Please enter git passowrd"
-		                addproperty="commit.password"
-		                />
-			            <exec executable="git">
-			                	<arg value="tag"/>
-			                	<arg value="-a"/>
-			            	<arg value="homework_${tag.number}"/>
-			            	<arg value="-m"/>
-			            	<arg value="Homework ${tag.number}"/>
-			            </exec>
-	             <exec executable="git">
-	                	<arg value="push"/>
-	                	<arg value="--tags"/>
-	             		<arg value="https://${commit.username}:${commit.password}@github.com/eestikaa/Labidas.git"/>
-	             	    <arg value="master"/>
-	            </exec>
-	        </target>
-        
- 
+	<property name="build.dir" value="${basedir}/build" />
+	<property name="build.classes.dir" value="${build.dir}/classes" />
+	<property name="build.jar.dir" value="${build.dir}/jar" />
+	<property name="src.dir" value="${basedir}/src" />
+	<property name="lib.dir" value="${basedir}/lib" />
+
+	<!-- database variables -->
+	<property name="data.dir" value="${basedir}/data" />
+	<property name="db.file" value="${data.dir}/POSdb" />
+	<property name="db.alias" value="POS" />
+	<property name="db.url" value="jdbc:hsqldb:hsql://localhost/POS" />
+	<property name="lib.hibernate.dir" value="${lib.dir}/hibernate" />
+
+	<property name="build.dir" value="${basedir}/build" />
+	<property name="build.classes.dir" value="${build.dir}/classes" />
+	<property name="build.jar.dir" value="${build.dir}/jar" />
+	<property name="src.dir" value="${basedir}/src" />
+
+	<path id="compile.classpath">
+		<fileset dir="lib">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${lib.hibernate.dir}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<path id="run.classpath">
+		<pathelement location="${build.classes.dir}" />
+		<!-- configuration -->
+		<pathelement location="${conf.dir}" />
+		<fileset dir="${lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+
+		<fileset dir="${lib.hibernate.dir}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<path id="test.classpath">
+		<pathelement location="${build.classes.dir}" />
+		<!-- configuration -->
+		<pathelement location="${conf.dir}" />
+		<fileset dir="lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<target name="build" depends="clean" description="Build the system">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.classes.dir}" />
+		<javac srcdir="${src.dir}" destdir="${build.classes.dir}" includeantruntime="false">
+			<classpath refid="compile.classpath" />
+		</javac>
+	</target>
+
+	<target name="run" depends="build" description="Run the application">
+		<java classname="ee.ut.math.tvt.Labidas.Intro" classpathref="test.classpath" fork="yes" />
+	</target>
+
+	<target name="dist" depends="build" description="Build the .jar and change version property.">
+		<mkdir dir="${build.jar.dir}" />
+		<jar destfile="${build.jar.dir}/Labidas.jar" basedir="${build.classes.dir}">
+			<manifest>
+				<attribute name="Main-Class" value="ee.ut.math.tvt.Labidas.Intro" />
+			</manifest>
+			<zipgroupfileset dir="${basedir}/lib" includes="**/*.jar" />
+		</jar>
+		<copy file="res/LABIDAS.jpg" todir="${build.jar.dir}" />
+		<copy todir="${build.jar.dir}">
+			<fileset dir="${basedir}" includes="**.properties" />
+		</copy>
+		<propertyfile file="${basedir}/version.properties">
+			<entry key="build.revision.number" type="int" operation="+" value="1" />
+			<entry key="build.number" operation="=" value="${build.revision.number}" />
+		</propertyfile>
+		<property file="${basedir}/version.properties" prefix="file" />
+		<propertyfile file="${basedir}/version.properties">
+			<entry key="build.number" operation="=" value="${file.build.major.number}.${file.build.minor.number}.${file.build.revision.number}" />
+		</propertyfile>
+
+	</target>
+	<target name="runc" depends="build" description="Run the application (console)">
+		<java classname="ee.ut.math.tvt.Labidas.Intro" classpathref="test.classpath" fork="yes">
+			<arg value="console" />
+		</java>
+	</target>
+	<target name="jrun" depends="dist">
+		<java jar="${build.jar.dir}/Labidas.jar" fork="true" />
+	</target>
+
+	<target name="clean" description="Clean up build system results">
+		<delete dir="${build.dir}" />
+	</target>
+	<target name="git_commit" description="Commit changes to Git repositiory">
+		<input message="Please enter commit comment" addproperty="commit.comment" />
+		<input message="Please enter git username" addproperty="commit.username" />
+		<input message="Please enter git passowrd" addproperty="commit.password" />
+
+		<exec executable="git">
+			<arg value="add" />
+			<arg value="-A" />
+		</exec>
+		<exec executable="git">
+			<arg value="commit" />
+			<arg value="-m" />
+			<arg value="${commit.comment}" />
+		</exec>
+		<exec executable="git">
+			<arg value="push" />
+			<arg value="https://${commit.username}:${commit.password}@github.com/eestikaa/Labidas.git" />
+			<arg value="master" />
+
+		</exec>
+	</target>
+
+	<target name="git_tag" description="Add tag to Git repository">
+		<input message="Please enter homework number" addproperty="tag.number" />
+		<input message="Please enter git username" addproperty="commit.username" />
+		<input message="Please enter git passowrd" addproperty="commit.password" />
+		<exec executable="git">
+			<arg value="tag" />
+			<arg value="-a" />
+			<arg value="homework_${tag.number}" />
+			<arg value="-m" />
+			<arg value="Homework ${tag.number}" />
+		</exec>
+		<exec executable="git">
+			<arg value="push" />
+			<arg value="--tags" />
+			<arg value="https://${commit.username}:${commit.password}@github.com/eestikaa/Labidas.git" />
+			<arg value="master" />
+		</exec>
+	</target>
+
+
 </project>
