@@ -7,11 +7,26 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name="PUBLIC.HISTORYITEM")
 public class HistoryItem implements DisplayableItem {
+	@Id
+	@Column(name="ID")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	@Column(name="DATE", nullable=false)
 	private String dateTaken;
+	@Column(name="TIME", nullable=false)
 	private String timeTaken;
+	@Column(name="HISTORY_PRICE")
 	private double totalOrderPrice;
+	@Column(name="SOLD_ITEMS")
 	private List<SoldItem> soldItemList;
 	/**Constructs a new HistoryItem based on the list of Sold Items.
 	 * @param items - Sold Items to be added and compiled.*/

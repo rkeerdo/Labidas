@@ -45,6 +45,8 @@ public interface SalesDomainController {
      */
     public void submitCurrentPurchase(List<SoldItem> goods)
             throws VerificationFailedException;
+    /**Ends Hibernate session.*/
+    public void endSession();
 
     /**Alternate Method for submitting purchase and storing it in history.*/
 	public void submitCurrentPurchase(List<SoldItem> goods, SalesSystemModel model) throws VerificationFailedException;
