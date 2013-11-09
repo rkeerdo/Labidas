@@ -37,6 +37,7 @@ public class HistoryItem implements DisplayableItem {
 		dateFormat = new SimpleDateFormat("HH:mm:ss");
 		timeTaken = dateFormat.format(cal.getTime());
 		this.soldItemList = items;
+		assignHistory();
 		this.totalOrderPrice = calculatePrice();
 	}
 
@@ -64,8 +65,13 @@ public class HistoryItem implements DisplayableItem {
 	public void assignID(Long id) {
 		this.id = id;
 	}
+	private void assignHistory(){
+		for(SoldItem item:soldItemList){
+			item.setHistoryItem(this);
+		}
+	}
 	
-	public double calculatePrice(){
+	private double calculatePrice(){
 		double totalPrice = 0;
 		for(SoldItem item : soldItemList){
 			totalPrice = totalPrice+ item.getPrice();

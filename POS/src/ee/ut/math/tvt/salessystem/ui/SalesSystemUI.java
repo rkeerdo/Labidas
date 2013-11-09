@@ -6,6 +6,8 @@ import ee.ut.math.tvt.salessystem.ui.model.SalesSystemModel;
 import ee.ut.math.tvt.salessystem.ui.tabs.HistoryTab;
 import ee.ut.math.tvt.salessystem.ui.tabs.PurchaseTab;
 import ee.ut.math.tvt.salessystem.ui.tabs.StockTab;
+import ee.ut.math.tvt.salessystem.util.HibernateUtil;
+
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
@@ -70,11 +72,14 @@ public class SalesSystemUI extends JFrame {
     addWindowListener(new WindowAdapter() {
       @Override
       public void windowClosing(WindowEvent e) {
+    	endSession();
         System.exit(0);
       }
     });
   }
-
+  private void endSession(){
+	  domainController.endSession();
+  }
   private void drawWidgets() {
     JTabbedPane tabbedPane = new JTabbedPane();
 
