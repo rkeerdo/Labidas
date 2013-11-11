@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="ee.ut.math.tvt.salessystem.domain.data.StockItem" table="PUBLIC.STOCKITEM">
+   <id name="id" type="long" column="ID" >
+   <generator class="assigned"/>
+  </id>
+
+  <property name="DATE" type="String">
+   <column name="DATE" />
+  </property>
+  <property name="time" type="String">
+        <column name="TIME" />
+  </property>
+  <property name="HISTORY_PRICE" type="double">
+  <column name="HISTORY_PRICE"/>
+  </property>
+  <property name="SOLD_ITEMS" type="List">
+  <column name="SOLD_ITEMS"/>
+  </property>
+ </class>
+</hibernate-mapping>

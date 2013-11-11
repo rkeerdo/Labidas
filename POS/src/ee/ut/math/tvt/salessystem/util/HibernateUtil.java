@@ -1,5 +1,7 @@
 package ee.ut.math.tvt.salessystem.util;
 
+import java.io.File;
+
 import org.apache.log4j.Logger;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -21,7 +23,8 @@ public class HibernateUtil {
 		try {
 			// Create the SessionFactory from hibernate.cfg.xml
 			Configuration configuration = new Configuration();
-			configuration.configure();
+			File conf = new File("conf/hibernate.cfg.xml");
+			configuration.configure(conf);
 
 			serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
 			sessionFactory = configuration.buildSessionFactory(serviceRegistry);
