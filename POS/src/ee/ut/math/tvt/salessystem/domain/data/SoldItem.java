@@ -30,9 +30,9 @@ public class SoldItem implements Cloneable, DisplayableItem {
     private Integer quantity;
     @Column(name="PRICE")
     private double price;
-    @ManyToOne(optional=true)
+    @ManyToOne(targetEntity=HistoryItem.class)
     @JoinColumn(name = "HISTORY_ID")
-    private HistoryItem historyItem;
+    private HistoryItem HistoryItem;
     public SoldItem(StockItem stockItem, int quantity) {
     	this.id = stockItem.getId();
         this.stockItem = stockItem;
@@ -43,10 +43,10 @@ public class SoldItem implements Cloneable, DisplayableItem {
     }
     
     public HistoryItem getHistoryItem(){
-    	return this.historyItem;
+    	return this.HistoryItem;
     }
     public void setHistoryItem(HistoryItem item){
-    	this.historyItem=item;
+    	this.HistoryItem=item;
     }
     public Long getId() {
         return id;
