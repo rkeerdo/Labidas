@@ -28,11 +28,11 @@ public class SoldItem implements Cloneable, DisplayableItem {
     private String name;
     @Column(name="QUANTITY")
     private Integer quantity;
-    @Column(name="PRICE")
+    @Column(name="ITEMPRICE")
     private double price;
-    @ManyToOne(targetEntity=HistoryItem.class)
-    @JoinColumn(name = "HISTORY_ID")
-    private HistoryItem HistoryItem;
+    @Transient
+    private HistoryItem historyItem;
+    
     public SoldItem(StockItem stockItem, int quantity) {
     	this.id = stockItem.getId();
         this.stockItem = stockItem;
@@ -43,10 +43,10 @@ public class SoldItem implements Cloneable, DisplayableItem {
     }
     
     public HistoryItem getHistoryItem(){
-    	return this.HistoryItem;
+    	return this.historyItem;
     }
     public void setHistoryItem(HistoryItem item){
-    	this.HistoryItem=item;
+    	this.historyItem=item;
     }
     public Long getId() {
         return id;

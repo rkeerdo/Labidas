@@ -5,13 +5,13 @@
 	<property name="build.jar.dir" value="${build.dir}/jar" />
 	<property name="src.dir" value="${basedir}/src" />
 	<property name="lib.dir" value="${basedir}/lib" />
+    <property name="lib.hibernate.dir"   value="${lib.dir}/hibernate"/>
 
 	<!-- database variables -->
 	<property name="data.dir" value="${basedir}/data" />
 	<property name="db.file" value="${data.dir}/POSdb" />
 	<property name="db.alias" value="POS" />
-	<property name="db.url" value="jdbc:hsqldb:hsql://localhost/POS" />
-	<property name="lib.hibernate.dir" value="${lib.dir}/hibernate" />
+	<property name="db.url" value="jdbc:hsqldb:mem://localhost/POS" />
 
 	<property name="build.dir" value="${basedir}/build" />
 	<property name="build.classes.dir" value="${build.dir}/classes" />
@@ -36,8 +36,8 @@
 		</fileset>
 
 		<fileset dir="${lib.hibernate.dir}">
-			<include name="*.jar" />
-		</fileset>
+					<include name="*.jar" />
+				</fileset>
 	</path>
 
 	<path id="test.classpath">
@@ -47,6 +47,9 @@
 		<fileset dir="lib">
 			<include name="*.jar" />
 		</fileset>
+		<fileset dir="${lib.hibernate.dir}">
+					<include name="*.jar" />
+				</fileset>
 	</path>
 
 	<target name="build" depends="clean" description="Build the system">
@@ -141,7 +144,7 @@
 	            classpathref="run.classpath"
 	            fork="yes"
 	        >
-	            <arg line="--user sa --url ${db.url}" />
+	            <arg line="--user SA --url ${db.url}" />
 	        </java>
 	    </target>
 

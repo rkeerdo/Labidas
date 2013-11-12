@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 @Entity
 @Table(name="PUBLIC.HISTORYITEM")
 public class HistoryItem implements DisplayableItem {
@@ -20,16 +21,21 @@ public class HistoryItem implements DisplayableItem {
 	@Column(name="ID")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	@Column(name="DATE", nullable=false)
+	@Column(name="DATETAKEN", nullable=false)
 	private String dateTaken;
-	@Column(name="TIME", nullable=false)
+	@Column(name="TIMETAKEN", nullable=false)
 	private String timeTaken;
-	@Column(name="HISTORY_PRICE")
+	@Column(name="totalOrderPrice")
 	private double totalOrderPrice;
-	@Column(name="SOLD_ITEMS")
+	@Transient
 	private List<SoldItem> soldItemList;
 	/**Constructs a new HistoryItem based on the list of Sold Items.
 	 * @param items - Sold Items to be added and compiled.*/
+	public HistoryItem() {
+		super();
+		soldItemList = null;
+	}
+	
 	public HistoryItem(List<SoldItem> items) {
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 		Calendar cal = new GregorianCalendar();
