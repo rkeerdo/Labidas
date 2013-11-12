@@ -2,7 +2,9 @@ package ee.ut.math.tvt.salessystem.ui.model;
 
 import org.apache.log4j.Logger;
 
+import ee.ut.math.tvt.Labidas.Intro;
 import ee.ut.math.tvt.salessystem.domain.data.HistoryItem;
+import ee.ut.math.tvt.salessystem.domain.data.SoldItem;
 
 public class HistoryTableModel extends SalesSystemTableModel<HistoryItem>{
 
@@ -32,8 +34,18 @@ public class HistoryTableModel extends SalesSystemTableModel<HistoryItem>{
 		int currentRows = this.getRowCount();
 		item.assignID(new Long(currentRows+1));
 		rows.add(item);
+		SoldItem[] clone=new SoldItem[item.getSoldItems().size()];
+		item.getSoldItems().toArray(clone);
+		for(int i=0;i<clone.length;i++){
+			Intro.service.addSoldItem(clone[i]);
+		}
+		Intro.service.addHistoryItem(item);
 		log.debug("Added item ID : " + item.getId());
 		fireTableDataChanged();
+	}
+	
+	public void addFromHibernate() {
+		//rows = Intro.service.getHistoryItems();
 	}
 	
 	@Override

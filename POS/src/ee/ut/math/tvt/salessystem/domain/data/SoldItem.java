@@ -28,11 +28,11 @@ public class SoldItem implements Cloneable, DisplayableItem {
     private String name;
     @Column(name="QUANTITY")
     private Integer quantity;
-    @Column(name="PRICE")
+    @Column(name="ITEMPRICE")
     private double price;
-    @ManyToOne(optional=true)
-    @JoinColumn(name = "HISTORY_ID")
+    @Transient
     private HistoryItem historyItem;
+    
     public SoldItem(StockItem stockItem, int quantity) {
     	this.id = stockItem.getId();
         this.stockItem = stockItem;

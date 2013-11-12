@@ -47,8 +47,9 @@ public class HistoryDetailPanel extends JFrame {
 	}
 	private void initList(){
 		List<SoldItem> orderItems = items.getSoldItems();
-		for(SoldItem item : orderItems){
-			infoTable.addItemNoDebug(item);
-		}
+		if(orderItems!=null)
+			for(SoldItem item : orderItems){
+				infoTable.addItemNoDebug(item);
+			}
 	}
 }

@@ -4,22 +4,20 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-  <class name="ee.ut.math.tvt.salessystem.domain.data.StockItem" table="PUBLIC.STOCKITEM">
+  <class name="ee.ut.math.tvt.salessystem.domain.data.HistoryItem" table="PUBLIC.HISTORYITEM">
    <id name="id" type="long" column="ID" >
    <generator class="assigned"/>
   </id>
-
-  <property name="DATE" type="String">
+  <property name="DATETAKEN" type="String">
    <column name="DATE" />
   </property>
-  <property name="time" type="String">
+  <property name="TIMETAKEN" type="String">
         <column name="TIME" />
   </property>
-  <property name="HISTORY_PRICE" type="double">
+  <property name="totalOrderPrice" type="double">
   <column name="HISTORY_PRICE"/>
   </property>
-  <property name="SOLD_ITEMS" type="List">
-  <column name="SOLD_ITEMS"/>
+  <property name="soldItemList>
   </property>
  </class>
 </hibernate-mapping>
