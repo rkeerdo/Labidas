@@ -2,6 +2,7 @@ package ee.ut.math.tvt.salessystem.domain.data;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -33,7 +34,7 @@ public class HistoryItem implements DisplayableItem {
 	 * @param items - Sold Items to be added and compiled.*/
 	public HistoryItem() {
 		super();
-		soldItemList = null;
+		soldItemList = new ArrayList<SoldItem>();
 	}
 	
 	public HistoryItem(List<SoldItem> items) {
@@ -67,7 +68,7 @@ public class HistoryItem implements DisplayableItem {
 	public List<SoldItem> getSoldItems() {
 		return soldItemList;
 	}
-
+	
 	public void assignID(Long id) {
 		this.id = id;
 	}

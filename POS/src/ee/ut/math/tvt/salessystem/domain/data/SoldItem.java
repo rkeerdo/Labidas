@@ -24,6 +24,10 @@ public class SoldItem implements Cloneable, DisplayableItem {
     private Long id;
 	@Transient
     private StockItem stockItem;
+	@Column(name="SALE_ID")
+	private Integer sId;
+	@Column(name="STOCKITEM_ID")
+	private Long stockItemId;
     @Column(name="NAME")
     private String name;
     @Column(name="QUANTITY")
@@ -32,10 +36,12 @@ public class SoldItem implements Cloneable, DisplayableItem {
     private double price;
     @Transient
     private HistoryItem historyItem;
-    
+    public SoldItem(){
+    	super();
+    }
     public SoldItem(StockItem stockItem, int quantity) {
-    	this.id = stockItem.getId();
         this.stockItem = stockItem;
+        this.stockItemId=stockItem.getId();
         this.name = stockItem.getName();
         this.price = stockItem.getPrice();
         this.quantity = quantity;
@@ -44,6 +50,9 @@ public class SoldItem implements Cloneable, DisplayableItem {
     
     public HistoryItem getHistoryItem(){
     	return this.historyItem;
+    }
+    public Integer getHistoryId(){
+    	return this.sId;
     }
     public void setHistoryItem(HistoryItem item){
     	this.historyItem=item;
@@ -75,6 +84,14 @@ public class SoldItem implements Cloneable, DisplayableItem {
     public Integer getQuantity() {
         return quantity;
     }
+    
+    public void assignID(Long id) {
+		this.id = id;
+	}
+    
+    public void assignSID(Integer id) {
+		this.sId = id;
+	}
     
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;

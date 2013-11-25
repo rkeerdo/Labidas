@@ -26,6 +26,11 @@ public class HibernateDataService {
 	
 	public List<HistoryItem> getHistoryItems() {
 		List<HistoryItem> result = session.createQuery("FROM HistoryItem").list();
+		List<SoldItem> result2 = session.createQuery("FROM SoldItem").list();
+		for(SoldItem item:result2){
+			Integer hId=item.getHistoryId();
+			result.get(hId).getSoldItems().add(item);
+		}
 		return result;
 	}
 

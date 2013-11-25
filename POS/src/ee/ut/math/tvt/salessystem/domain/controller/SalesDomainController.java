@@ -28,7 +28,7 @@ public interface SalesDomainController {
      * 
      * @throws VerificationFailedException
      */
-    //public List<HistoryItem> loadHistoryState();
+    public List<HistoryItem> loadHistoryState();
     public void startNewPurchase() throws VerificationFailedException;
 
     /**

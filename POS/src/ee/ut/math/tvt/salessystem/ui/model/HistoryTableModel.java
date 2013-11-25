@@ -1,10 +1,12 @@
 package ee.ut.math.tvt.salessystem.ui.model;
 
 import org.apache.log4j.Logger;
+import org.hibernate.Session;
 
 import ee.ut.math.tvt.Labidas.Intro;
 import ee.ut.math.tvt.salessystem.domain.data.HistoryItem;
 import ee.ut.math.tvt.salessystem.domain.data.SoldItem;
+import ee.ut.math.tvt.salessystem.util.HibernateUtil;
 
 public class HistoryTableModel extends SalesSystemTableModel<HistoryItem>{
 
@@ -31,21 +33,39 @@ public class HistoryTableModel extends SalesSystemTableModel<HistoryItem>{
 	}
 	/**Adds the history item and assigns it an ID based on current session.*/
 	public void addItem(HistoryItem item){
+		Session session = HibernateUtil.currentSession();
+		session.beginTransaction();
 		int currentRows = this.getRowCount();
 		item.assignID(new Long(currentRows+1));
-		rows.add(item);
 		SoldItem[] clone=new SoldItem[item.getSoldItems().size()];
 		item.getSoldItems().toArray(clone);
 		for(int i=0;i<clone.length;i++){
-			Intro.service.addSoldItem(clone[i]);
+			clone[i].assignSID(currentRows+1);
+			clone[i].assignID(new Long(this.getSoldItems()+1+i));
+			session.save(clone[i]);
+			System.out.println(i);
 		}
-		Intro.service.addHistoryItem(item);
+		rows.add(item);
+		session.save(item);
+		session.getTransaction().commit();
+		HibernateUtil.closeSession();
 		log.debug("Added item ID : " + item.getId());
 		fireTableDataChanged();
 	}
 	
 	public void addFromHibernate() {
-		//rows = Intro.service.getHistoryItems();
+		rows = Intro.service.getHistoryItems();
+	}
+	
+	public int getSoldItems(){
+		int count=0;
+		System.out.println("test1");
+		for(HistoryItem item:rows){
+			System.out.println("test2");
+			if(item.getSoldItems()!=null)
+				count+=item.getSoldItems().size();
+		}
+		return count;
 	}
 	
 	@Override
