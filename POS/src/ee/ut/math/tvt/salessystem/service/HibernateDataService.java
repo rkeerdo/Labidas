@@ -24,10 +24,10 @@ public class HibernateDataService {
 		return result;
 	}
 	
-	/*public List<HistoryItem> getHistoryItems() {
+	public List<HistoryItem> getHistoryItems() {
 		List<HistoryItem> result = session.createQuery("FROM HistoryItem").list();
 		return result;
-	}*/
+	}
 
 	public void addHistoryItem(HistoryItem item) {
 		session.save(item);

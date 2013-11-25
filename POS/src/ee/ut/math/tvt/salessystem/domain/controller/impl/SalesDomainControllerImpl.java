@@ -42,9 +42,9 @@ public class SalesDomainControllerImpl implements SalesDomainController {
 	public List<StockItem> loadWarehouseState() {
 		return Intro.service.getStockItems();
 	}
-	/*public List<HistoryItem> loadHistoryState(){
+	public List<HistoryItem> loadHistoryState(){
 		return Intro.service.getHistoryItems();
-	}*/
+	}
 	@Override
 	public void endSession() {
 		 HibernateUtil.closeSession();

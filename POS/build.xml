@@ -11,7 +11,7 @@
 	<property name="data.dir" value="${basedir}/data" />
 	<property name="db.file" value="${data.dir}/POSdb" />
 	<property name="db.alias" value="POS" />
-	<property name="db.url" value="jdbc:hsqldb:mem://localhost/POS" />
+	<property name="db.url" value="jdbc:hsqldb:hsql://localhost/POS" />
 
 	<property name="build.dir" value="${basedir}/build" />
 	<property name="build.classes.dir" value="${build.dir}/classes" />
