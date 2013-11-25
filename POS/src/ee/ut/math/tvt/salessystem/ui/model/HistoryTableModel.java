@@ -36,12 +36,12 @@ public class HistoryTableModel extends SalesSystemTableModel<HistoryItem>{
 		Session session = Intro.service.getSession();
 		session.beginTransaction();
 		int currentRows = this.getRowCount();
-		item.assignID(new Long(currentRows+1));
+		item.assignID(new Long(currentRows));
 		SoldItem[] clone=new SoldItem[item.getSoldItems().size()];
 		item.getSoldItems().toArray(clone);
 		for(int i=0;i<clone.length;i++){
-			clone[i].assignSID(currentRows+1);
-			clone[i].assignID(new Long(this.getSoldItems()+1+i));
+			clone[i].assignSID(currentRows);
+			clone[i].assignID(new Long(this.getSoldItems()+i));
 			session.save(clone[i]);
 			System.out.println(i);
 		}
@@ -58,9 +58,7 @@ public class HistoryTableModel extends SalesSystemTableModel<HistoryItem>{
 	
 	public int getSoldItems(){
 		int count=0;
-		System.out.println("test1");
 		for(HistoryItem item:rows){
-			System.out.println("test2");
 			if(item.getSoldItems()!=null)
 				count+=item.getSoldItems().size();
 		}
