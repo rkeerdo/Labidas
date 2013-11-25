@@ -29,7 +29,9 @@ public class HibernateDataService {
 		List<SoldItem> result2 = session.createQuery("FROM SoldItem").list();
 		for(SoldItem item:result2){
 			Integer hId=item.getHistoryId();
-			result.get(hId).getSoldItems().add(item);
+			for(int i=0; i<result.size(); i++)
+				if(result.get(i).getId().equals(hId))
+					result.get(i).getSoldItems().add(item);
 		}
 		return result;
 	}
@@ -40,5 +42,9 @@ public class HibernateDataService {
 	
 	public void addSoldItem(SoldItem item) {
 		session.save(item);
+	}
+	
+	public Session getSession() {
+		return session;
 	}
 }

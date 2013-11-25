@@ -33,7 +33,7 @@ public class HistoryTableModel extends SalesSystemTableModel<HistoryItem>{
 	}
 	/**Adds the history item and assigns it an ID based on current session.*/
 	public void addItem(HistoryItem item){
-		Session session = HibernateUtil.currentSession();
+		Session session = Intro.service.getSession();
 		session.beginTransaction();
 		int currentRows = this.getRowCount();
 		item.assignID(new Long(currentRows+1));
@@ -48,7 +48,6 @@ public class HistoryTableModel extends SalesSystemTableModel<HistoryItem>{
 		rows.add(item);
 		session.save(item);
 		session.getTransaction().commit();
-		HibernateUtil.closeSession();
 		log.debug("Added item ID : " + item.getId());
 		fireTableDataChanged();
 	}
