@@ -40,7 +40,6 @@ private SalesSystemModel model;
 			StockItem item = model.getWarehouseTableModel().getItemById(productID);
 			i = item.getQuantity();
 		} catch (NoSuchElementException e){
-			return false;
 		}
 		if(i>=quantity){
 			return true;
