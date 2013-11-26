@@ -1,5 +1,7 @@
 package ee.ut.math.tvt.salessystem.ui.model;
 
+import java.awt.List;
+import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
 import org.apache.log4j.Logger;
@@ -14,9 +16,14 @@ public class StockTableModel extends SalesSystemTableModel<StockItem> {
 	private static final long serialVersionUID = 1L;
 
 	private static final Logger log = Logger.getLogger(StockTableModel.class);
+	
+	private static ArrayList<StockItem> stockItems;
+
 
 	public StockTableModel() {
 		super(new String[] {"Id", "Name", "Price", "Quantity"});
+		stockItems = new ArrayList<StockItem>();
+
 	}
 
 	@Override
@@ -58,6 +65,39 @@ public class StockTableModel extends SalesSystemTableModel<StockItem> {
 		}
 		fireTableDataChanged();
 	}
+	
+	public static boolean hasEnoughInStock(StockItem item, int quantity) {
+        for(StockItem i : stockItems) {
+                if (i.getId().equals(item.getId())) {
+                        return (i.getQuantity() >= quantity);
+                }
+        }
+        return false;
+	}
+	
+	public boolean validateNameUniqueness(String newName) {
+        return validateNameUniqueness(newName, null);
+	}
+	
+	/**
+     * Checks name uniqueness, ignoring a single item
+     */
+    public boolean validateNameUniqueness(String newName, StockItem ignoreItem) {
+            for (StockItem item : stockItems) {
+                    if (item == ignoreItem) {
+                            log.debug("=== Skipping ignored item "+ item.getId());
+                            continue;
+                    }
+                    log.debug(" === Comparing: " + newName + " vs. " + item.getName());
+
+                    if (newName.equals(item.getName())) {
+                            return false;
+                    }
+            }
+            return true;
+    }
+
+
 
 	@Override
 	public String toString() {
