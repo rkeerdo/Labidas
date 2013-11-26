@@ -4,6 +4,7 @@ import java.util.NoSuchElementException;
 
 import org.apache.log4j.Logger;
 
+import ee.ut.math.tvt.Labidas.Intro;
 import ee.ut.math.tvt.salessystem.domain.data.StockItem;
 
 /**
@@ -39,16 +40,21 @@ public class StockTableModel extends SalesSystemTableModel<StockItem> {
 	 * @param stockItem
 	 */
 	public void addItem(final StockItem stockItem) {
+		Intro.service.getSession().beginTransaction();
 		try {
 			StockItem item = getItemById(stockItem.getId());
 			item.setQuantity(item.getQuantity() + stockItem.getQuantity());
 			log.debug("Found existing item " + item.getName()
 					+ " increased quantity by " + stockItem.getQuantity());
+			Intro.service.getSession().merge(item);
+			Intro.service.getSession().getTransaction().commit();
 		}
 		catch (NoSuchElementException e) {
 			rows.add(stockItem);
 			log.debug("Added " + stockItem.getName()
 					+ " quantity of " + stockItem.getQuantity());
+			Intro.service.getSession().save(stockItem);
+			Intro.service.getSession().getTransaction().commit();
 		}
 		fireTableDataChanged();
 	}
