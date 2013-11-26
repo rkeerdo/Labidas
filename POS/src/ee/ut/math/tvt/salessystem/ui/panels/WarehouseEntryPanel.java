@@ -137,6 +137,7 @@ public class WarehouseEntryPanel extends JFrame {
 				if(!(newItem==null)){
 					int quantity = newItem.getQuantity();
 					long id = newItem.getId();
+					System.out.println(quantity);
 					if(helper.canOrderQuantity(id, -quantity)){
 						model.getWarehouseTableModel().addItem(newItem);
 						dispose();
