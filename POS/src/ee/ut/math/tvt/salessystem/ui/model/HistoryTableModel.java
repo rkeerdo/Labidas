@@ -57,7 +57,7 @@ public class HistoryTableModel extends SalesSystemTableModel<HistoryItem>{
 	}
 	
 	public void addFromHibernate() {
-		rows = hds.getHistoryItems();
+		rows = Intro.service.getHistoryItems();
 	}
 	
 	public int getSoldItems(){
