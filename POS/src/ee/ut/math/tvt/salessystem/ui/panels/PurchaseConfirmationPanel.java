@@ -160,14 +160,19 @@ public class PurchaseConfirmationPanel extends JDialog {
 		double changeCheck;
 		try{
 			changeCheck = Double.parseDouble(orderChange.getText());
-		} catch (NumberFormatException e){
+			if(orderPayment.getText().length()==0){
+				throw new Exception("Please fill the money field.");
+			}
+		} catch (Exception e){
+			System.err.println("Exception caught!!!!REDTEXT!");
 			return 0;
 		}
 		if(changeCheck>=0){
 			return 1;
 		} else {
 			return 2;
-		}
+		} 
+		
 	}
 	// return true if the order has been confirmed.
 	/**Checks if the order has been completed and confirmed. 
