@@ -81,7 +81,8 @@ public class HistoryItem implements DisplayableItem {
 	private double calculatePrice(){
 		double totalPrice = 0;
 		for(SoldItem item : soldItemList){
-			totalPrice = totalPrice+ item.getPrice();
+			System.out.println(totalPrice);
+			totalPrice = totalPrice+ item.getSum();
 		}
 		return totalPrice;
 	}

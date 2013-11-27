@@ -25,8 +25,8 @@ public class HistoryItemTest {
 
 	@Before
     public void setUp() {
-      item1 = new StockItem((long)100, "Õun", "Kollane", 0.5, 3);
-      item2 = new StockItem((long)200, "Kõrvits", "Sinine", 0.1, 3);
+      item1 = new StockItem(new Long(100), "Õun", "Kollane", 0.5, 3);
+      item2 = new StockItem(new Long(200), "Kõrvits", "Sinine", 0.1, 3);
       item3 = new SoldItem(item1, 3);
       item4 = new SoldItem(item2, 0);
       model1.add(item3);
@@ -36,7 +36,7 @@ public class HistoryItemTest {
       history1.assignID(1L);
       
       history2 = new HistoryItem(model2);
-      history2.assignID(2L);
+      history2.assignID(new Long(1));
       
       
     }
@@ -48,6 +48,7 @@ public class HistoryItemTest {
     
     @Test
     public void testSumWithMultipleItems(){
+    	System.out.println(history1.getTotalOrderPrice());
     	Assert.assertEquals(1.5, history1.getTotalOrderPrice());
     }
     
@@ -58,6 +59,7 @@ public class HistoryItemTest {
     
     @Test
     public void testAssignHistoryId(){
-    	Assert.assertEquals(1L, (long) history2.getId());
+    	Long longTest1 = new Long(1);
+    	Assert.assertEquals(longTest1, history2.getId());
     }
 }
