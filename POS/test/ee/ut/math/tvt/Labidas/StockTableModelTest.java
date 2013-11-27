@@ -14,8 +14,8 @@ import ee.ut.math.tvt.salessystem.domain.data.StockItem;
 import ee.ut.math.tvt.salessystem.ui.model.StockTableModel;
 
 public class StockTableModelTest {
-	
-	private StockItem item1;
+ 
+ private StockItem item1;
     private StockItem item2;
     private StockItem item3;
     private StockItem item4;
@@ -29,50 +29,64 @@ public class StockTableModelTest {
     private StockTableModel model4 = new StockTableModel();
 
     
-	@Before
-	public void setUp() {
-		item1 = new StockItem((long) 100, "Kapsas", "Punane", 5.0, 5);
-		item2 = new StockItem((long) 101, "Kapsas2", "Punane2", 5.0, 5);
-		item3 = new StockItem((long) 100, "Kapsas", "Punane", 5.0, 5);
-		item4 = new StockItem((long) 101, "Tomat", "Roheline", 5.0, 6);
-		item5 = new StockItem((long) 101, "Kapsas", "Punane", 5.0, 5);
+ @Before
+ public void setUp() {
+  item1 = new StockItem((long) 100, "Kapsas", "Punane", 5.0, 5);
+  item2 = new StockItem((long) 101, "Kapsas2", "Punane2", 5.0, 5);
+  item3 = new StockItem((long) 100, "Kapsas", "Punane", 5.0, 5);
+  item4 = new StockItem((long) 101, "Tomat", "Roheline", 5.0, 6);
+  item5 = new StockItem((long) 101, "Kapsas", "Punane", 5.0, 5);
 
-		
-        model1.addItem(item1);
-        model1.addItem(item2);
+  
+        model1.checkIfUnique(item1);
+        model1.checkIfUnique(item2);
         
-        model2.addItem(item3);
+        model2.checkIfUnique(item3);
         
-        model3.addItem(item4);
-        model3.addItem(item5);
+        model3.checkIfUnique(item4);
+        model3.checkIfUnique(item5);
         
-        model4.addItem(item1);
+        model4.checkIfUnique(item1);
 
-	}
-	
-	@Test
-	public void testValidateNameUniqueness() {
-		assertTrue(model1.validateNameUniqueness("Kapsas"));
-        assertTrue(!model1.validateNameUniqueness("Juurikas"));
+ }
+ 
+ @Test
+ public void testValidateNameUniqueness() {
+        try {
+         StockItem a1 = model1.checkIfUnique(item5);
+         Assert.fail("Failed");
+        }
+        catch (NoSuchElementException e){
+         try {
+    StockItem a2 = model1.checkIfUnique(item1);
+    assertTrue(true);
+   } catch (Exception e1) {
+    Assert.fail("Failed");
+   }
+        }
+ }
+ 
+ @Test
+ public void testHasEnoughInStock() {
+        assertTrue(model2.hasEnoughInStock(item3, 0));
+        assertTrue(model2.hasEnoughInStock(item3, 5));
+        assertTrue(!model2.hasEnoughInStock(item3, 6));
 
-	}
-	
-	@Test
-	public void testHasEnoughInStock() {
-        assertTrue(model2.hasEnoughInStock(item2, 0));
-        assertTrue(model2.hasEnoughInStock(item2, 5));
-        assertTrue(!model2.hasEnoughInStock(item2, 6));
-
-	}
-	
-	@Test
-	public void testGetItemByIdWhenItemExists() {
-		Assert.assertEquals(item1, model3.getItemById((long)100));
-	}
-	
-	@Test
-	(expected = NoSuchElementException.class)
-	public void testGetItemByIdWhenThrowsException() {
-		model4.getItemById((long)105);
-	}
+ }
+ 
+ @Test
+ public void testGetItemByIdWhenItemExists() {
+  if(item1 == model1.getItemById((long)100))
+   if(item3 != model1.getItemById((long)100))
+    assertTrue(true);
+   else
+    Assert.fail("failed");
+  else Assert.fail("failed");
+ }
+ 
+ @Test
+ (expected = NoSuchElementException.class)
+ public void testGetItemByIdWhenThrowsException() {
+  model4.getItemById((long)105);
+ }
 }

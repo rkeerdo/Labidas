@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -19,9 +21,10 @@ public class PurchaseItemPanelTest {
 	private PurchaseInfoTableModel model;
 	private SoldItem item1;
 	private SoldItem item2;
-	
+	private static final org.apache.log4j.Logger logger = Logger.getLogger(PurchaseItemPanelTest.class);
 	@Before
 	public void setUp() {
+		PropertyConfigurator.configure("log4j.properties");
 		model= new PurchaseInfoTableModel();
 		item1=new SoldItem(new StockItem(new Long(1), "Soda","Beverage",1.0,10),3);
 		item2=new SoldItem(new StockItem(new Long(2), "Beer","Beverage",2.0,10),1);
