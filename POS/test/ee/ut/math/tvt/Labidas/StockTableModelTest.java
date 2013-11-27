@@ -50,6 +50,7 @@ public class StockTableModelTest {
 
  }
  
+ //No idea why this fails, can't reach the throw-errors maybe?
  @Test
  public void testValidateNameUniqueness() {
         try {

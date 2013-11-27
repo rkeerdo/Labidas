@@ -1,5 +1,7 @@
 package ee.ut.math.tvt.Labidas;
 
+import static org.junit.Assert.*;
+
 import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
@@ -19,6 +21,8 @@ public class testHistoryTableModel {
 	private HistoryTableModel model;
 	private HistoryItem hItem;
 	
+	//NB! Ant startDB before running this test
+	
 	@Before
 	public void setUp() {
 		HibernateDataService hib = new HibernateDataService();
@@ -31,18 +35,8 @@ public class testHistoryTableModel {
 	}
 	
 	@Test
-	public void test1() {
-		
-	}
-	
-	@Test
-	public void test2() {
-		
-	}
-	
-	@Test
-	public void test3() {
-		
+	public void testGetSoldItems() {
+		assertEquals(1, model.getSoldItems());
 	}
 
 }
