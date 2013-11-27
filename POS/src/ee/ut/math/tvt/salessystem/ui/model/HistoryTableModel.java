@@ -6,15 +6,19 @@ import org.hibernate.Session;
 import ee.ut.math.tvt.Labidas.Intro;
 import ee.ut.math.tvt.salessystem.domain.data.HistoryItem;
 import ee.ut.math.tvt.salessystem.domain.data.SoldItem;
+import ee.ut.math.tvt.salessystem.service.HibernateDataService;
 import ee.ut.math.tvt.salessystem.util.HibernateUtil;
+import ee.ut.math.tvt.Labidas.*;
 
 public class HistoryTableModel extends SalesSystemTableModel<HistoryItem>{
 
 	private static final long serialVersionUID = 1L;
+	private static HibernateDataService hds;
 
 	private static final Logger log = Logger.getLogger(HistoryTableModel.class);
-	public HistoryTableModel() {
+	public HistoryTableModel(HibernateDataService hds) {
 		super(new String[]{"Id" ,"Date", "Time", "Price"});
+		this.hds = hds;
 		}
 
 	@Override
@@ -33,7 +37,7 @@ public class HistoryTableModel extends SalesSystemTableModel<HistoryItem>{
 	}
 	/**Adds the history item and assigns it an ID based on current session.*/
 	public void addItem(HistoryItem item){
-		Session session = Intro.service.getSession();
+		Session session = hds.getSession();
 		session.beginTransaction();
 		int currentRows = this.getRowCount();
 		item.assignID(new Long(currentRows));

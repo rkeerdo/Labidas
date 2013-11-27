@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import ee.ut.math.tvt.Labidas.Intro;
 import ee.ut.math.tvt.salessystem.domain.controller.SalesDomainController;
 import ee.ut.math.tvt.salessystem.domain.data.SoldItem;
 import ee.ut.math.tvt.salessystem.util.WarehouseHelper;
@@ -34,7 +35,7 @@ public class SalesSystemModel {
         
         warehouseTableModel = new StockTableModel();
         currentPurchaseTableModel = new PurchaseInfoTableModel();
-        historyTableModel = new HistoryTableModel();
+        historyTableModel = new HistoryTableModel(Intro.service);
         // populate stock model with history data
         historyTableModel.populateWithData(domainController.loadHistoryState());
         // populate stock model with data from the warehouse
