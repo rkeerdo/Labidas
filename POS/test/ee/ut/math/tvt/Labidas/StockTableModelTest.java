@@ -53,16 +53,16 @@ public class StockTableModelTest {
  @Test
  public void testValidateNameUniqueness() {
         try {
-         StockItem a1 = model1.checkIfUnique(item5);
+         model1.checkIfUnique(item5);
          Assert.fail("Failed");
         }
         catch (NoSuchElementException e){
          try {
-    StockItem a2 = model1.checkIfUnique(item1);
-    assertTrue(true);
-   } catch (Exception e1) {
-    Assert.fail("Failed");
-   }
+		    model1.checkIfUnique(item1);
+		    assertTrue(true);
+		   } catch (Exception e1) {
+			   Assert.fail("Failed");
+		   }
         }
  }
  
