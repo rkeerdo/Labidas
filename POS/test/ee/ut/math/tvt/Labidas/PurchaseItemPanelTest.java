@@ -10,15 +10,15 @@ import org.junit.Test;
 import ee.ut.math.tvt.salessystem.domain.data.SoldItem;
 import ee.ut.math.tvt.salessystem.domain.data.StockItem;
 import ee.ut.math.tvt.salessystem.ui.model.PurchaseInfoTableModel;
-import ee.ut.math.tvt.salessystem.ui.model.SalesSystemModel;
-import ee.ut.math.tvt.salessystem.ui.panels.PurchaseConfirmationPanel;
-import ee.ut.math.tvt.salessystem.ui.panels.PurchaseItemPanel;
 
+// because the getSum method is actually buried really deep
+// and would require generating some UI, the content of the 
+// method is just copied and put into work with what's 
+// needed for it
 public class PurchaseItemPanelTest {
 	private PurchaseInfoTableModel model;
 	private SoldItem item1;
 	private SoldItem item2;
-	private PurchaseConfirmationPanel panel;
 	
 	@Before
 	public void setUp() {
