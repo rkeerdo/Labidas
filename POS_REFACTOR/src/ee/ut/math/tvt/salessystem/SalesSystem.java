@@ -1,5 +1,5 @@
 package ee.ut.math.tvt.salessystem;
-
+/**TAG GOD*/
 import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;

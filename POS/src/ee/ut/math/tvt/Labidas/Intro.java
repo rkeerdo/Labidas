@@ -11,7 +11,7 @@ import ee.ut.math.tvt.salessystem.ui.ConsoleUI;
 import ee.ut.math.tvt.salessystem.ui.SalesSystemUI;
 import ee.ut.math.tvt.salessystem.service.HibernateDataService;
 
-
+/**PREPARE YOUR TAG*/
 public class Intro {
 	private static final org.apache.log4j.Logger logger = Logger.getLogger(Intro.class);
 	private static final String MODE = "console";
